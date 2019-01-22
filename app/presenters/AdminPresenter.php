@@ -59,6 +59,7 @@ final class AdminPresenter extends Presenter{
     public function renderEvaluations($newsId){
         $this->template->evaluationsKeys = $this->evaluationsManager->getNameColumns()->getColumns('evaluation');
         $this->template->evaluationsValues = $this->evaluationsManager->getPublicEvaluationNewsId($newsId);
+        $this->template->titleNews = $this->newsManager->getPublicNewsId($newsId)->short_text;
     }
 
     public function actionEvaluations($newsId){
