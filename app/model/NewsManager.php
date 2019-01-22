@@ -21,6 +21,12 @@ class NewsManager {
         $this->database = $database;
     }
 
+
+    public function getPublicNewsQuery(){
+        return $this->database->query('SELECT * FROM news')->fetchAll();
+    }
+
+
     public function getPublicNews(){
         return $this->database->table('news');
     }
@@ -35,7 +41,11 @@ class NewsManager {
     }
 
     public function setAddNews($values){
-        $this->database->table('news')->insert($values);
+        $this->getPublicNews()->insert($values);
+    }
+
+    public function getPublicNewsId($news_id){
+        return $this->getPublicNews()->where('id', $news_id)->fetch();
     }
 
 

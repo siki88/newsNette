@@ -9,6 +9,7 @@ use Nette\Security\AuthenticationException;
 use App\Model\NewsManager;
 use App\Model\UsersManager;
 use App\Model\EvaluationsManager;
+//use Nette\Security\IIdentity;
 
 
 final class AdminPresenter extends Presenter{
@@ -26,6 +27,9 @@ final class AdminPresenter extends Presenter{
     public function renderDefault(){
         $this->template->newsCount = $this->newsManager->getPublicNews()->count();
         $this->template->usersCount = $this->usersManager->getPublicUsers()->count();
+        $this->template->role = $this->user->getIdentity()->getRoles()[0];
+        $this->template->email = $this->user->getIdentity()->email;
+
     }
 
     public function actionDefault(){
@@ -61,8 +65,14 @@ final class AdminPresenter extends Presenter{
         $this->controlUserLogin();
     }
 
+    public function actionLogin(){
+       // $this->getUser()->logout();
+    }
+
     private function controlUserLogin(){
-        if(!$this->getUser()->isLoggedIn()){
+        if($this->getUser()->isLoggedIn() && in_array("admin", $this->user->getIdentity()->getRoles())){
+            $this->user->setExpiration('15 minutes');
+        }else{
             $this->redirect('Admin:login');
         }
     }
@@ -125,8 +135,6 @@ final class AdminPresenter extends Presenter{
                 $form->onSuccess[] = [$this, 'formSucceded'];
             default:
                 break;
-
-
         }
 
 
@@ -138,7 +146,7 @@ final class AdminPresenter extends Presenter{
         switch ($this->getAction()) {
             case "login":
                 try{
-                    $this->getUser()->login($values->username, $values->password);
+                    $this->getUser()->login($values->username,$values->password);
                     $this->redirect('Admin:default');
                 }catch(AuthenticationException $e){
                     $form->addError('Nesprávné přihlašovací jméno nebo heslo.');
@@ -157,6 +165,5 @@ final class AdminPresenter extends Presenter{
             default:
                 break;
         }
-
     }
 }

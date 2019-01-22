@@ -23,7 +23,7 @@ class UsersManager {
     }
 
     public function getPublicUsers(){
-        return $this->database->table('users');
+        return $this->database->table('users')->select('*');
     }
 
     public function getNameColumns(){

@@ -16,7 +16,6 @@ services:
 	- App\Model\NewsManager
 	- App\Model\UsersManager
 	- App\Model\EvaluationsManager
-
-security:
-    users:
-         admin: admin
+	- App\Model\TokenManager
+	authenticator: App\Model\AuthenticatorManager
+#	adminAuthenticator: App\Model\AuthenticatorManager

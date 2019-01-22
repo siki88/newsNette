@@ -21,8 +21,12 @@ class EvaluationsManager {
         $this->database = $database;
     }
 
+    private function getPublicEvaluation(){
+        return $this->database->table('evaluation');
+    }
+
     public function getPublicEvaluationNewsId($newsId){
-        return $this->database->table('evaluation')->where('news_id', $newsId);
+        return $this->getPublicEvaluation()->where('news_id', $newsId);
     }
 
     public function getNameColumns(){
@@ -33,8 +37,28 @@ class EvaluationsManager {
         var_dump($newsId);
     }
 
-    public function setPublicEvaluationDelete($evId){
-        return $this->database->table('evaluation')->where('id', $evId)->delete();
+    public function setPublicEvaluationDelete($evaluation_id){
+        return $this->database->table('evaluation')->where('id', $evaluation_id)->delete();
+    }
+
+    public function setPublicEvaluation($news_id,$evaluation_data,$user_id){
+        $generateTable = $this->generateTableEvaluation($news_id,$evaluation_data,$user_id);
+        $row = $this->getPublicEvaluation()->insert($generateTable);
+        return $row;
+    }
+
+
+    private function generateTableEvaluation($news_id,$evaluation_data,$user_id){
+        $evaluationTable = [
+            'news_id'  => (int)$news_id,
+            'users_id' => (int)$user_id
+        ];
+            if($evaluation_data == 'true'){
+                $evaluationTable['inch_up'] = 1;
+            }elseif($evaluation_data == 'false'){
+                $evaluationTable['inch_down'] = 1;
+            }
+        return $evaluationTable;
     }
 
 
