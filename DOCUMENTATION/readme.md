@@ -29,7 +29,7 @@ VYSTUP:
     description :     
 ####zkontroluje zda existuje token a zda je či není po expiraci, pokud je po expiraci doporučuji provést odhlášení z aplikace   
 
-##.../api/token
+##.../api/evaluation
 VSTUP: POST :
     token : 
     news_id :
