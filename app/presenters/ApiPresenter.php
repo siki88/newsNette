@@ -36,40 +36,13 @@ final class ApiPresenter extends Presenter{
 
 
     public function renderDefault(){
-      //  var_dump('test');
     }
 
     /**
      * @throws Nette\Application\AbortException
      */
     public function actionDefault(){
- //       $value = $this->newsManager->getPublicNews();
- //       $value = ['this is',['hello','world']];
-//       $this->sendResponse(new \Nette\Application\Responses\JsonResponse($value));
-//        $this->sendResponse( Nette\Application\IResponse($value));
-//        echo('<pre>');
-//        var_dump($value);
-//        echo('</pre>');
-      //  $value = ['hello','world'];
-//        $this->sendJson($value->fetchAll());
-    //    $this->sendResponse($value);
-    //    var_dump('test');
-
-  //      die();
     }
-
-
-    //for view latte
-    public function renderJson(){
-    }
-
-    public function actionJson(){
-     //   $data = $this->newsManager->getPublicNews()->select('*')->fetchAll();
-     //   $this->response($data);
-
-
-    }
-
 
 
     public function actionLogin(){
