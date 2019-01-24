@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Počítač: 127.0.0.1
--- Vytvořeno: Úte 22. led 2019, 09:34
+-- Vytvořeno: Čtv 24. led 2019, 12:26
 -- Verze serveru: 10.1.37-MariaDB
 -- Verze PHP: 7.3.0
 
@@ -44,7 +44,6 @@ CREATE TABLE `evaluation` (
 
 INSERT INTO `evaluation` (`id`, `news_id`, `users_id`, `inch_up`, `inch_down`, `evaluation`, `created_at`) VALUES
 (14, 1, 1, 1, NULL, NULL, '2019-01-21 15:56:04'),
-(15, 1, 1, 1, NULL, NULL, '2019-01-21 15:56:08'),
 (16, 1, 1, 1, NULL, NULL, '2019-01-21 15:56:10'),
 (17, 1, 1, 1, NULL, NULL, '2019-01-21 15:56:15'),
 (25, 1, 1, 1, NULL, NULL, '2019-01-21 15:58:45'),
@@ -82,6 +81,27 @@ INSERT INTO `news` (`id`, `short_text`, `text`, `author`, `users_id`, `image`, `
 -- --------------------------------------------------------
 
 --
+-- Struktura tabulky `roles`
+--
+
+CREATE TABLE `roles` (
+  `id` int(11) NOT NULL,
+  `name` varchar(32) NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Vypisuji data pro tabulku `roles`
+--
+
+INSERT INTO `roles` (`id`, `name`, `created_at`) VALUES
+(1, 'guest', '2019-01-24 11:31:09'),
+(2, 'member', '2019-01-24 11:31:09'),
+(3, 'admin', '2019-01-24 11:31:09');
+
+-- --------------------------------------------------------
+
+--
 -- Struktura tabulky `tokens`
 --
 
@@ -99,7 +119,7 @@ CREATE TABLE `tokens` (
 --
 
 INSERT INTO `tokens` (`id`, `token`, `user_id`, `create_at`, `update_at`, `expirate_at`) VALUES
-(4, 'nk9Mwgx4kXHSbODimpA6IIz/SafW8FsfqjdKuVRoP9apDBD15OBLiiYmrKmWP0J2MKYQcW5UG4eO0ktIxWoPeQ==', 1, '2019-01-21 11:55:43', '2019-01-22 09:01:57', '2019-01-22 21:01:57');
+(4, 'jDerqAq0MMlxonVuCyY5qfkOt1UECRN7HyDckXh8wvIS6k7KZzQlBDM4gvrgZD8rGgEXEG1ZlpAFyyK14AjMTw==', 1, '2019-01-21 11:55:43', '2019-01-24 08:01:29', '2019-01-24 20:01:29');
 
 -- --------------------------------------------------------
 
@@ -112,7 +132,7 @@ CREATE TABLE `users` (
   `username` varchar(255) NOT NULL,
   `email` varchar(255) DEFAULT NULL,
   `password` varchar(255) NOT NULL,
-  `role` varchar(16) NOT NULL DEFAULT 'guest',
+  `roles_id` int(16) DEFAULT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -120,9 +140,9 @@ CREATE TABLE `users` (
 -- Vypisuji data pro tabulku `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `email`, `password`, `role`, `created_at`) VALUES
-(1, 'siki@example.com', 'siki@example.com', '$2y$10$ttwaGNOGm3PaBBjY9JdTIuOTJLZjDwD6R/UPo6G0WN7gfACeVgm0i', 'admin', '2019-01-16 12:01:19'),
-(6, 'admin@example.com', 'admin@example.com', '$2y$10$rAvBQVOePzfRSk//vVRa2.BFx.BYR34xoEDuKXE/vyIBacIao6Pea', 'admin', '2019-01-22 09:16:38');
+INSERT INTO `users` (`id`, `username`, `email`, `password`, `roles_id`, `created_at`) VALUES
+(1, 'siki@example.com', 'siki@example.com', '$2y$10$ttwaGNOGm3PaBBjY9JdTIuOTJLZjDwD6R/UPo6G0WN7gfACeVgm0i', 3, '2019-01-16 12:01:19'),
+(6, 'admin@example.com', 'admin@example.com', '$2y$10$rAvBQVOePzfRSk//vVRa2.BFx.BYR34xoEDuKXE/vyIBacIao6Pea', 3, '2019-01-22 09:16:38');
 
 --
 -- Klíče pro exportované tabulky
@@ -144,6 +164,12 @@ ALTER TABLE `news`
   ADD KEY `users_id` (`users_id`);
 
 --
+-- Klíče pro tabulku `roles`
+--
+ALTER TABLE `roles`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Klíče pro tabulku `tokens`
 --
 ALTER TABLE `tokens`
@@ -154,7 +180,8 @@ ALTER TABLE `tokens`
 -- Klíče pro tabulku `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `roles_id` (`roles_id`);
 
 --
 -- AUTO_INCREMENT pro tabulky
@@ -170,6 +197,12 @@ ALTER TABLE `evaluation`
 -- AUTO_INCREMENT pro tabulku `news`
 --
 ALTER TABLE `news`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT pro tabulku `roles`
+--
+ALTER TABLE `roles`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
@@ -206,6 +239,12 @@ ALTER TABLE `news`
 --
 ALTER TABLE `tokens`
   ADD CONSTRAINT `tokens_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+
+--
+-- Omezení pro tabulku `users`
+--
+ALTER TABLE `users`
+  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`roles_id`) REFERENCES `roles` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -19,7 +19,4 @@ services:
 	- App\Model\TokenManager
 	- App\Model\RolesManager
 	authenticator: App\Model\AuthenticatorManager
-#	roles:
-#	    guest:
-#	    member:
-#	    admin:  [member]
+#	adminAuthenticator: App\Model\AuthenticatorManager
