@@ -29,6 +29,8 @@ final class AdminPresenter extends Presenter{
         $this->template->usersCount = $this->usersManager->getPublicUsers()->count();
         $this->template->role = $this->user->getIdentity()->getRoles()[0];
         $this->template->email = $this->user->getIdentity()->email;
+   //     var_dump($this->user->getIdentity()->getId());
+   //     var_dump($this->user->getIdentity()->getRoles());
 
     }
 
@@ -105,6 +107,7 @@ final class AdminPresenter extends Presenter{
                     ->setRequired()
                     ->setType('password');
                 $form->addSubmit('send', 'LOGIN')
+                    ->setOption('id', 'username')
                     ->setAttribute('class', 'button');
                 $form->onSuccess[] = [$this, 'formSucceded'];
                 break;

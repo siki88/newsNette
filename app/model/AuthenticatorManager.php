@@ -16,6 +16,7 @@ use Nette\Security\Passwords;
 use Nette\Security\IAuthenticator;
 use App\Model\UsersManager;
 use App\Model\TokenManager;
+use App\Model\RolesManager;
 
 class AuthenticatorManager implements IAuthenticator {
 
@@ -24,11 +25,13 @@ class AuthenticatorManager implements IAuthenticator {
     private $database;
     private $usersManager;
     private $tokenManager;
+    private $rolesManager;
 
-    public function __construct(Context $database, UsersManager $usersManager, TokenManager $tokenManager){
+    public function __construct(Context $database, UsersManager $usersManager, TokenManager $tokenManager, RolesManager $rolesManager){
         $this->database = $database;
         $this->usersManager = $usersManager;
         $this->tokenManager = $tokenManager;
+        $this->rolesManager = $rolesManager;
     }
 
 // http://php.net/manual/en/function.http-response-code.php
@@ -56,7 +59,8 @@ class AuthenticatorManager implements IAuthenticator {
             }elseif(!Nette\Security\Passwords::verify($password, $row->password)) {
                 throw new Nette\Security\AuthenticationException('Invalid password.');
             }
-        $authorize = new Nette\Security\Identity($row->id, $row->role, ['email' => $row->email]); //->getData()
+            $role = $this->rolesManager->setRolesId($row->roles_id);
+        $authorize = new Nette\Security\Identity($row->id, $role->name, ['email' => $row->email]); //->getData()
         return($authorize);
     }
 

@@ -104,6 +104,8 @@ final class ApiPresenter extends Presenter{
         $httpRequest = $this->getHttpRequest();
 
         //$this->controllValidation($httpRequest->getPost(), $securityArray);
+        //$this->controllValidation($httpRequest->getPost(), $securityArray);
+
 
         if($httpRequest->isMethod('POST')){
             $request = array_intersect_key($httpRequest->getPost(), array_flip($securityArray));
@@ -147,29 +149,27 @@ final class ApiPresenter extends Presenter{
     }
 
 
-    /*
+/*
     private function controllValidation($httpRequest,$securityArray){
         //whitelist
         $securityArray = [
-                        'token'    => 'string',
-                        'evaluation_id' => 'string',
+                        'token'    => 'string:88',
+                        'news_id' => 'string',
                         'evaluation' => 'string'
                          ];
 
         foreach($securityArray as $key => $value){
+        //    var_dump($httpRequest);
+        //    var_dump($key);
+        //    var_dump($value);
+            Validators::assertField($httpRequest, $key, $value);
 
-            if(Validators::assertField($httpRequest, 'token', 'string')){
-                var_dump('yes');
-                die();
-            }else{
-                $status = [ 'code' => 409, 'description' => 'Invalid parameterss' ];
-                $this->response($status);
-            }
-            return true;
+                $this->response($httpRequest);
+
         }
-
+        return true;
     }
-    */
+*/
 
     private function response($data){
         $this->sendResponse(new JsonResponse($data, "application/json;charset=utf-8"));
