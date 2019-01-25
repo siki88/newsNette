@@ -8,7 +8,7 @@ application:
 
 
 session:
-	expiration: 14 days
+	expiration: 1 days
 
 
 services:
@@ -20,3 +20,4 @@ services:
 	- App\Model\RolesManager
 	authenticator: App\Model\AuthenticatorManager
 #	adminAuthenticator: App\Model\AuthenticatorManager
+
