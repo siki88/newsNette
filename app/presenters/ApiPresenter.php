@@ -38,9 +38,7 @@ final class ApiPresenter extends Presenter{
     public function renderDefault(){
     }
 
-    /**
-     * @throws Nette\Application\AbortException
-     */
+
     public function actionDefault(){
     }
 
@@ -59,7 +57,6 @@ final class ApiPresenter extends Presenter{
                             'description' => 'Invalid email format'
                         ];
                     }
-
                 $this->response($status);
             }
     }
@@ -103,9 +100,9 @@ final class ApiPresenter extends Presenter{
         $securityArray = ['token','news_id','evaluation'];
         $httpRequest = $this->getHttpRequest();
 
+        //Pole všech parametrů odeslaných aplikaci požadavkem GET => $this->request->getParameters() ;
+        //Pole všech parametrů odeslaných aplikaci požadavkem POST => $this->request->getPost() ;
         //$this->controllValidation($httpRequest->getPost(), $securityArray);
-        //$this->controllValidation($httpRequest->getPost(), $securityArray);
-
 
         if($httpRequest->isMethod('POST')){
             $request = array_intersect_key($httpRequest->getPost(), array_flip($securityArray));

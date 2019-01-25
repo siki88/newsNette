@@ -151,7 +151,7 @@ final class AdminPresenter extends Presenter{
             case "login":
                 try{
                     $this->getUser()->login($values->username,$values->password);
-                    $this->redirect('Admin:default');
+                    $this->redirect('default');
                 }catch(AuthenticationException $e){
                     $form->addError('Nesprávné přihlašovací jméno nebo heslo.');
                 }
@@ -169,5 +169,7 @@ final class AdminPresenter extends Presenter{
             default:
                 break;
         }
+
+
     }
 }
