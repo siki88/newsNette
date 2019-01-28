@@ -21,11 +21,11 @@ class RolesManager {
         $this->database = $database;
     }
 
-    private function getTableRoles(){
+    public function getPublicRoles(){
         return $this->database->table('roles');
     }
 
     public function setRolesId($roles_id){
-        return $this->getTableRoles()->get($roles_id);
+        return $this->getPublicRoles()->get($roles_id);
     }
 }

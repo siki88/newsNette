@@ -2,29 +2,22 @@
 
 namespace App\Presenters;
 
-use Nette\Application\UI\Presenter;
-use Nette;
-use Nette\Utils\Json;
-use Nette\Application\IResponse;
-use App\Model\NewsManager;
-use App\Model\AuthenticatorManager;
-    use App\Model\UsersManager;
-    use App\Model\EvaluationsManager;
-use App\Model\TokenManager;
-//use Nette\Http\Request;
-//use Nette\Http\UrlScript;
-//use Nette\Security\IAuthenticator;
-use Nette\Utils\Validators;
-
-use Nette\Application\Responses\JsonResponse;
+use Nette\Application\UI\Presenter,
+     App\Model\NewsManager,
+     App\Model\AuthenticatorManager,
+     App\Model\UsersManager,
+     App\Model\EvaluationsManager,
+     App\Model\TokenManager,
+     Nette\Utils\Validators,
+     Nette\Application\Responses\JsonResponse;
 
 final class ApiPresenter extends Presenter{
 
-    private $newsManager;
-    private $usersManager;
-    private $evaluationsManager;
-    private $authenticatorManager;
-    private $tokenManager;
+    private $newsManager,
+             $usersManager,
+             $evaluationsManager,
+             $authenticatorManager,
+             $tokenManager;
 
     public function __construct(NewsManager $newsManager, UsersManager $usersManager, EvaluationsManager $evaluationsManager, AuthenticatorManager $authenticatorManager, TokenManager $tokenManager){
         $this->newsManager = $newsManager;
@@ -147,6 +140,7 @@ final class ApiPresenter extends Presenter{
 
 
 /*
+    //  test validatoru
     private function controllValidation($httpRequest,$securityArray){
         //whitelist
         $securityArray = [

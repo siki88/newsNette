@@ -23,7 +23,7 @@ class UsersManager {
     }
 
     public function getPublicUsers(){
-        return $this->database->table('users')->select('*');
+        return $this->database->table('users');
     }
 
     public function getNameColumns(){
@@ -34,4 +34,7 @@ class UsersManager {
         $values->password = Passwords::hash($values->password);
         $this->database->table('users')->insert($values);
     }
+
+
+
 }

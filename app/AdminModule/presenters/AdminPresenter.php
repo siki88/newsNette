@@ -2,26 +2,26 @@
 
 namespace App\Presenters;
 
-use Nette\Application\UI\Presenter;
-use Nette;
-use Nette\Application\UI\Form;
-use Nette\Security\AuthenticationException;
-use App\Model\NewsManager;
-use App\Model\UsersManager;
-use App\Model\EvaluationsManager;
-//use Nette\Security\IIdentity;
-
+use Nette\Application\UI\Presenter,
+     Nette\Application\UI\Form,
+     Nette\Security\AuthenticationException,
+     App\Model\NewsManager,
+     App\Model\UsersManager,
+     App\Model\EvaluationsManager,
+     App\Model\RolesManager;
 
 final class AdminPresenter extends Presenter{
 
-    private $newsManager;
-    private $usersManager;
-    private $evaluationsManager;
+    private $newsManager,
+             $usersManager,
+             $evaluationsManager,
+             $rolesManager;
 
-    public function __construct(NewsManager $newsManager, UsersManager $usersManager, EvaluationsManager $evaluationsManager){
+    public function __construct(NewsManager $newsManager, UsersManager $usersManager, EvaluationsManager $evaluationsManager, RolesManager $rolesManager){
         $this->newsManager = $newsManager;
         $this->usersManager = $usersManager;
         $this->evaluationsManager = $evaluationsManager;
+        $this->rolesManager = $rolesManager;
     }
 
     public function renderDefault(){
@@ -29,9 +29,6 @@ final class AdminPresenter extends Presenter{
         $this->template->usersCount = $this->usersManager->getPublicUsers()->count();
         $this->template->role = $this->user->getIdentity()->getRoles()[0];
         $this->template->email = $this->user->getIdentity()->email;
-   //     var_dump($this->user->getIdentity()->getId());
-   //     var_dump($this->user->getIdentity()->getRoles());
-
     }
 
     public function actionDefault(){
@@ -115,8 +112,7 @@ final class AdminPresenter extends Presenter{
                 $form->getElementPrototype()->class = 'myForm';
                 $form->addText('short_text', 'Nadpis novinky:')
                     ->setRequired();
-                $form->addText('author', 'Autor novinky:')
-                    ->setRequired();
+                $form->addSelect('users_id', 'Autor novinky:', $this->usersManager->getPublicUsers()->fetchPairs('id', 'username'));
                 $form->addTextArea('text', 'Text novinky:')
                     ->setRequired();
                 $form->addSubmit('send', 'Přidat novinku')
@@ -134,14 +130,13 @@ final class AdminPresenter extends Presenter{
                 $form->addPassword('password', 'Heslo')
                     ->setRequired()
                     ->setType('password');
+                $form->addSelect('roles_id', 'Oprávnění:', $this->rolesManager->getPublicRoles()->fetchPairs('id', 'name'));
                 $form->addSubmit('send', 'Přidat uživatele')
                     ->setAttribute('class', 'button');
                 $form->onSuccess[] = [$this, 'formSucceded'];
             default:
                 break;
         }
-
-
         return $form;
     }
 
@@ -169,7 +164,6 @@ final class AdminPresenter extends Presenter{
             default:
                 break;
         }
-
 
     }
 }
