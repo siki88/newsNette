@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f56d0242-e68f-411c-b641-bb5c2fc3aea7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/AdminModule/presenters/AdminPresenter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/AdminModule/presenters/AdminPresenter.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/model/AuthenticatorManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/AuthenticatorManager.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/model/EvaluationsManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/EvaluationsManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/NewsManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/NewsManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/RolesManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/RolesManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/TokenManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/TokenManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/UsersManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/UsersManager.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,20 +52,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/model/EvaluationsManager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+            <state relative-caret-position="85">
+              <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/model/AuthenticatorManager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
-              <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
+            <state relative-caret-position="731">
+              <caret line="43" selection-start-line="43" selection-end-line="43" />
               <folding>
                 <element signature="e#6#93#0#PHP" expanded="true" />
               </folding>
@@ -186,8 +180,8 @@
         <option value="$PROJECT_DIR$/app/model/UsersManager.php" />
         <option value="$PROJECT_DIR$/app/model/RolesManager.php" />
         <option value="$PROJECT_DIR$/app/model/NewsManager.php" />
-        <option value="$PROJECT_DIR$/app/model/EvaluationsManager.php" />
         <option value="$PROJECT_DIR$/app/model/AuthenticatorManager.php" />
+        <option value="$PROJECT_DIR$/app/model/EvaluationsManager.php" />
       </list>
     </option>
   </component>
@@ -367,12 +361,12 @@
       <workItem from="1548316067410" duration="2652000" />
       <workItem from="1548321220095" duration="14533000" />
       <workItem from="1548661071963" duration="635000" />
-      <workItem from="1548661964928" duration="8911000" />
+      <workItem from="1548661964928" duration="9047000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="159419000" />
+    <option name="totallyTimeSpent" value="159555000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="9" y="0" width="1849" height="1040" extended-state="0" />
@@ -718,20 +712,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/EvaluationsManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/model/AuthenticatorManager.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
+        <state relative-caret-position="731">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
           <folding>
             <element signature="e#6#93#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/EvaluationsManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
         </state>
       </provider>
     </entry>

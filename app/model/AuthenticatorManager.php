@@ -41,7 +41,7 @@ class AuthenticatorManager implements IAuthenticator {
         }else{
             return $this->defaultAuthenticate($credentials);
         }
-        
+
     }
 
     private function defaultAuthenticate(array $credentials){
