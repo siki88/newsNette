@@ -49,6 +49,13 @@ final class AdminPresenter extends Presenter{
     public function renderUsers(){
         $this->template->usersKeys = $this->usersManager->getNameColumns()->getColumns('users');
         $this->template->usersValues = $this->usersManager->getPublicUsers();
+
+        /*
+        foreach ($this->usersManager->getPublicUsersRole() as $test){
+          var_dump($test);
+        }
+        die();
+        */
     }
 
     public function actionUsers(){

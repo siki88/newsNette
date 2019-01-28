@@ -8,24 +8,18 @@
 
 namespace App\Model;
 
-use Nette;
-use Nette\Database\Context;
-use Nette\Security\AuthenticationException;
-use Nette\Security\IIdentity;
-use Nette\Security\Passwords;
-use Nette\Security\IAuthenticator;
-use App\Model\UsersManager;
-use App\Model\TokenManager;
-use App\Model\RolesManager;
+use Nette,
+     Nette\Database\Context,
+     Nette\Security\IAuthenticator;
 
 class AuthenticatorManager implements IAuthenticator {
 
     use Nette\SmartObject;
 
-    private $database;
-    private $usersManager;
-    private $tokenManager;
-    private $rolesManager;
+    private $database,
+         $usersManager,
+         $tokenManager,
+         $rolesManager;
 
     public function __construct(Context $database, UsersManager $usersManager, TokenManager $tokenManager, RolesManager $rolesManager){
         $this->database = $database;
@@ -47,8 +41,7 @@ class AuthenticatorManager implements IAuthenticator {
         }else{
             return $this->defaultAuthenticate($credentials);
         }
-
-
+        
     }
 
     private function defaultAuthenticate(array $credentials){

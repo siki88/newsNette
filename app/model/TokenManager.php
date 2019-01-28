@@ -8,23 +8,18 @@
 
 namespace App\Model;
 
-use Nette;
-use Nette\Database\Context;
-use Nette\Security\AuthenticationException;
-//use Nette\Security\IIdentity;
-use Nette\Security\Passwords;
-use Nette\Security\IAuthenticator;
-use App\Model\UsersManager;
-use Nette\Utils\DateTime;
-use Nette\Utils\Validators;
+use Nette,
+     Nette\Database\Context,
+     Nette\Utils\DateTime,
+     Nette\Utils\Validators;
 
 
 class TokenManager  {
 
     use Nette\SmartObject;
 
-    private $database;
-    private $usersManager;
+    private $database,
+             $usersManager;
 
     public function __construct(Context $database, UsersManager $usersManager){
         $this->database = $database;
@@ -58,7 +53,7 @@ class TokenManager  {
 
             return $this->getToken()->select('token')->get($controll->id)->toArray();
         }else{ // none exists -> insert
-            $tokenTable = $this->getToken()->insert($this->generateTableToken($user_id), 'insert');
+            $tokenTable = $this->getToken()->insert($this->generateTableToken($user_id,'insert'));
             return $this->getToken()->select('token')->get($tokenTable->id)->toArray();
         }
     }

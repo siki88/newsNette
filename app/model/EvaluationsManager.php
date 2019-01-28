@@ -8,8 +8,8 @@
 
 namespace App\Model;
 
-use Nette;
-use Nette\Database\Context;
+use Nette
+     Nette\Database\Context;
 
 class EvaluationsManager {
 
