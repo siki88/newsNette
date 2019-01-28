@@ -1,6 +1,7 @@
 <?php
 
-namespace App\FrontModule\Presenters;
+namespace App\Presenters;
+//namespace App\FrontModule\Presenters;
 
 use Nette\Application\UI\Presenter;
 use Nette;

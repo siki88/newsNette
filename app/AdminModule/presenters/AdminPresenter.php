@@ -1,6 +1,7 @@
 <?php
 
-namespace App\AdminModule\Presenters;
+namespace App\Presenters;
+//namespace App\AdminModule\Presenters;
 
 use Nette\Application\UI\Presenter,
      Nette\Application\UI\Form,
