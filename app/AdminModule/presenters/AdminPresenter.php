@@ -25,6 +25,12 @@ final class AdminPresenter extends Presenter{
         $this->rolesManager = $rolesManager;
     }
 
+
+    public function startup(){
+        parent::startup();
+        $this->controlUserLogin();
+    }
+
     public function renderDefault(){
         $this->template->newsCount = $this->newsManager->getPublicNews()->count();
         $this->template->usersCount = $this->usersManager->getPublicUsers()->count();
@@ -33,7 +39,7 @@ final class AdminPresenter extends Presenter{
     }
 
     public function actionDefault(){
-        $this->controlUserLogin();
+
     }
 
 
@@ -43,24 +49,15 @@ final class AdminPresenter extends Presenter{
     }
 
     public function actionNews(){
-        $this->controlUserLogin();
     }
 
 
     public function renderUsers(){
         $this->template->usersKeys = $this->usersManager->getNameColumns()->getColumns('users');
         $this->template->usersValues = $this->usersManager->getPublicUsers();
-
-        /*
-        foreach ($this->usersManager->getPublicUsersRole() as $test){
-          var_dump($test);
-        }
-        die();
-        */
     }
 
     public function actionUsers(){
-        $this->controlUserLogin();
     }
 
     public function renderEvaluations($newsId){
@@ -70,17 +67,16 @@ final class AdminPresenter extends Presenter{
     }
 
     public function actionEvaluations($newsId){
-        $this->controlUserLogin();
     }
 
     public function actionLogin(){
-       // $this->getUser()->logout();
     }
 
     private function controlUserLogin(){
+
         if($this->getUser()->isLoggedIn() && in_array("admin", $this->user->getIdentity()->getRoles())){
             $this->user->setExpiration('15 minutes');
-        }else{
+        }elseif($this->getAction() !== 'login'){
             $this->redirect('Admin:login');
         }
     }
