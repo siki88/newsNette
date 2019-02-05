@@ -15,6 +15,7 @@ VYSTUP: vypíše všechny novinky
 ##.../api/login
 ----------------
 POST : VSTUP: 
+
     email : admin@example.com
     password : admin
 ----------------    
@@ -33,6 +34,7 @@ VYSTUP:
 ##.../api/token
 ---------------
 POST : VSTUP: 
+
     token : 
 ---------------    
 VYSTUP:
@@ -47,6 +49,7 @@ VYSTUP:
 ##.../api/evaluation
 -------------------
 POST : VSTUP: 
+
     token : 
     news_id :
     evaluation :
