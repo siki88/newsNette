@@ -5,7 +5,7 @@ password:  admin
 API:
 ##.../api/news
 ---------------
-VSTUP: /
+VSTUP: 
 ---------------
 VYSTUP: vypíše všechny novinky
 
