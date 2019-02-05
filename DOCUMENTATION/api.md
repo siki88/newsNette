@@ -22,8 +22,8 @@ POST : VSTUP:
 VYSTUP:
 
     email :
-    token :            
-    code  :
+    token :          
+    code  : 
     description :
     
 ####zkontroluje zda existuje uživatel, zda heslo souhlasí. Zda existuje token uživatele, pokud ne- vytvoří. Pokud ano, a je po expiraci - vytvoří nový, v opačném případě pouze prodlouží expiraci
@@ -35,7 +35,7 @@ VYSTUP:
 ---------------
 POST : VSTUP: 
 
-    token : 
+    token : (string)
 ---------------    
 VYSTUP:
 
@@ -50,9 +50,9 @@ VYSTUP:
 -------------------
 POST : VSTUP: 
 
-    token : 
-    news_id :
-    evaluation :
+    token : (string)
+    news_id : (int)
+    evaluation : (true/false)
 ------------------    
 VYSTUP:  
 
