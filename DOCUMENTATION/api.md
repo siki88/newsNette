@@ -4,11 +4,12 @@ password:  admin
 
 API:
 ##.../api/news
-VSTUP:
-       /
-VYSTUP:        
-####vypíše všechny novinky
+---------------
+VSTUP: /
+VYSTUP: vypíše všechny novinky
 
+---------------
+---------------
 
 ##.../api/login
 ----------------
@@ -23,6 +24,7 @@ VYSTUP:
 ####zkontroluje zda existuje uživatel, zda heslo souhlasí. Zda existuje token uživatele, pokud ne- vytvoří. Pokud ano, a je po expiraci - vytvoří nový, v opačném případě pouze prodlouží expiraci
 
 ##.../api/token
+---------------
 VSTUP: POST :
     token : 
 VYSTUP:          
@@ -31,6 +33,7 @@ VYSTUP:
 ####zkontroluje zda existuje token a zda je či není po expiraci, pokud je po expiraci doporučuji provést odhlášení z aplikace   
 
 ##.../api/evaluation
+-------------------
 VSTUP: POST :
     token : 
     news_id :
