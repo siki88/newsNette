@@ -24,11 +24,11 @@ class EvaluationFacade{
         $this->entityManager = $entityManager;
     }
 
-    public function getAllEvaluation(){
+    public function getEvaluationAll(){
         return $this->entityManager->getRepository($this->entityName)->findAll();
     }
 
-    public function getEvaluationParam($parameters){
+    public function getEvaluationParam(array $parameters = []){
     return isset($parameters) ? $this->entityManager->getRepository($this->entityName)->findBy($parameters) : NULL;
     }
 

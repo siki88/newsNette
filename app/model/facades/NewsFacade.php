@@ -24,18 +24,23 @@ class NewsFacade{
         $this->entityManager = $entityManager;
     }
 
-    public function getAllNews(){
+    public function getNewsAll(){
         return $this->entityManager->getRepository($this->entityName)->findAll();
     }
 
-    public function getNewsId($id){
+    public function getNewsCount(array $parameters = []){
+        return $this->entityManager->getRepository($this->entityName)->count($parameters);
+    }
+
+    public function getNewsId(int $id){
         return isset($id) ? $this->entityManager->find($this->entityName, $id) : NULL;
     }
 
-    public function getNewsParam($parameters){
+    public function getNewsParam(array $parameters = []){
         return isset($parameters) ? $this->entityManager->getRepository($this->entityName)->findBy($parameters) : NULL;
     }
 
+    /*
     public function getPublicNewsWithInch(){
         $usersRole = $this->entityManager->createQueryBuilder();
         $usersRole->select('n , SUM(e.inch_up) AS inch_up , SUM(e.inch_down) AS inch_down')
@@ -46,6 +51,7 @@ class NewsFacade{
        // return $this->database->query('SELECT news.*, SUM(evaluation.inch_up) AS inch_up , SUM(evaluation.inch_down) AS inch_down FROM news LEFT JOIN evaluation ON news.id = evaluation.news_id GROUP BY news.id');
 
     }
+    */
 
 
 

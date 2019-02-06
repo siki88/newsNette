@@ -2,136 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f56d0242-e68f-411c-b641-bb5c2fc3aea7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/model/entities/User.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/model/facades/UserFacade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/presenters/BasePresenter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/newsNette.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/newsNette.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/AdminModule/presenters/AdminPresenter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/AdminModule/presenters/AdminPresenter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/AdminModule/templates/Admin/evaluations.latte" beforeDir="false" afterPath="$PROJECT_DIR$/app/AdminModule/templates/Admin/evaluations.latte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/AdminModule/templates/Admin/news.latte" beforeDir="false" afterPath="$PROJECT_DIR$/app/AdminModule/templates/Admin/news.latte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/AdminModule/templates/Admin/users.latte" beforeDir="false" afterPath="$PROJECT_DIR$/app/AdminModule/templates/Admin/users.latte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ApiModule/presenters/ApiPresenter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/ApiModule/presenters/ApiPresenter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/FrontModule/presenters/HomepagePresenter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/FrontModule/presenters/HomepagePresenter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/bootstrap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/config.neon" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.neon" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/AuthenticatorManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/AuthenticatorManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/EvaluationsManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/EvaluationsManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/NewsManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/NewsManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/RolesManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/RolesManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/TokenManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/TokenManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/UsersManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/UsersManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/bin/tester.bat" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/bin/tester.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/application/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/application/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/application/src/Application/Responses/FileResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/application/src/Application/Responses/FileResponse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/application/src/Application/Responses/JsonResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/application/src/Application/Responses/JsonResponse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/application/src/Application/UI/ComponentReflection.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/application/src/Application/UI/ComponentReflection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/application/src/Application/UI/Presenter.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/application/src/Application/UI/Presenter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/application/src/Bridges/ApplicationTracy/templates/RoutingPanel.panel.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/application/src/Bridges/ApplicationTracy/templates/RoutingPanel.panel.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/database/appveyor.yml" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/database/appveyor.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/database/src/Database/Connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/database/src/Database/Connection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/database/src/Database/Context.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/database/src/Database/Context.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/database/src/Database/Drivers/MySqlDriver.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/database/src/Database/Drivers/MySqlDriver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/database/src/Database/Drivers/OdbcDriver.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/database/src/Database/Drivers/OdbcDriver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/database/src/Database/Drivers/PgSqlDriver.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/database/src/Database/Drivers/PgSqlDriver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/database/src/Database/Helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/database/src/Database/Helpers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/database/src/Database/ResultSet.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/database/src/Database/ResultSet.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/database/src/Database/SqlPreprocessor.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/database/src/Database/SqlPreprocessor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/database/src/Database/Table/Selection.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/database/src/Database/Table/Selection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/database/src/Database/Table/SqlBuilder.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/database/src/Database/Table/SqlBuilder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/di/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/di/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/di/src/DI/Compiler.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/di/src/DI/Compiler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/di/src/DI/CompilerExtension.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/di/src/DI/CompilerExtension.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/di/src/DI/Container.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/di/src/DI/Container.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/di/src/DI/ContainerBuilder.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/di/src/DI/ContainerBuilder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/di/src/DI/PhpGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/di/src/DI/PhpGenerator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/mail/src/Bridges/MailDI/MailExtension.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/mail/src/Bridges/MailDI/MailExtension.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/mail/src/Mail/Message.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/mail/src/Mail/Message.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/mail/src/Mail/SendmailMailer.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/mail/src/Mail/SendmailMailer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/mail/src/Mail/SmtpMailer.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/mail/src/Mail/SmtpMailer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/php-generator/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/php-generator/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/php-generator/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/php-generator/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/php-generator/src/PhpGenerator/ClassType.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/php-generator/src/PhpGenerator/ClassType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/php-generator/src/PhpGenerator/Closure.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/php-generator/src/PhpGenerator/Closure.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/php-generator/src/PhpGenerator/Constant.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/php-generator/src/PhpGenerator/Constant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/php-generator/src/PhpGenerator/Factory.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/php-generator/src/PhpGenerator/Factory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/php-generator/src/PhpGenerator/GlobalFunction.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/php-generator/src/PhpGenerator/GlobalFunction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/php-generator/src/PhpGenerator/Helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/php-generator/src/PhpGenerator/Helpers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/php-generator/src/PhpGenerator/Method.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/php-generator/src/PhpGenerator/Method.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/php-generator/src/PhpGenerator/Parameter.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/php-generator/src/PhpGenerator/Parameter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/php-generator/src/PhpGenerator/PhpFile.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/php-generator/src/PhpGenerator/PhpFile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/php-generator/src/PhpGenerator/PhpLiteral.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/php-generator/src/PhpGenerator/PhpLiteral.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/php-generator/src/PhpGenerator/PhpNamespace.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/php-generator/src/PhpGenerator/PhpNamespace.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/php-generator/src/PhpGenerator/Property.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/php-generator/src/PhpGenerator/Property.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/php-generator/src/PhpGenerator/Traits/CommentAware.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/php-generator/src/PhpGenerator/Traits/CommentAware.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/php-generator/src/PhpGenerator/Traits/FunctionLike.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/php-generator/src/PhpGenerator/Traits/FunctionLike.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/php-generator/src/PhpGenerator/Traits/NameAware.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/php-generator/src/PhpGenerator/Traits/NameAware.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/php-generator/src/PhpGenerator/Traits/VisibilityAware.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/php-generator/src/PhpGenerator/Traits/VisibilityAware.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/security/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/security/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/security/src/Bridges/SecurityDI/SecurityExtension.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/security/src/Bridges/SecurityDI/SecurityExtension.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/security/src/Security/Passwords.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/security/src/Security/Passwords.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/tester/appveyor.yml" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/tester/appveyor.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/tester/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/tester/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/tester/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/tester/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/tester/src/CodeCoverage/Collector.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/tester/src/CodeCoverage/Collector.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/tester/src/CodeCoverage/Generators/AbstractGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/tester/src/CodeCoverage/Generators/AbstractGenerator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/tester/src/CodeCoverage/Generators/CloverXMLGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/tester/src/CodeCoverage/Generators/CloverXMLGenerator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/tester/src/CodeCoverage/Generators/HtmlGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/tester/src/CodeCoverage/Generators/HtmlGenerator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/tester/src/CodeCoverage/Generators/template.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/tester/src/CodeCoverage/Generators/template.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/tester/src/CodeCoverage/PhpParser.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/tester/src/CodeCoverage/PhpParser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/tester/src/Framework/Assert.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/tester/src/Framework/Assert.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/tester/src/Framework/AssertException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/tester/src/Framework/AssertException.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/tester/src/Framework/DataProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/tester/src/Framework/DataProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/tester/src/Framework/DomQuery.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/tester/src/Framework/DomQuery.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/tester/src/Framework/Dumper.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/tester/src/Framework/Dumper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/tester/src/Framework/Environment.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/tester/src/Framework/Environment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/tester/src/Framework/FileMock.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/tester/src/Framework/FileMock.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/tester/src/Framework/FileMutator.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/tester/src/Framework/FileMutator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/tester/src/Framework/Helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/tester/src/Framework/Helpers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/tester/src/Framework/TestCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/tester/src/Framework/TestCase.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/tester/src/Runner/CliTester.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/tester/src/Runner/CliTester.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/tester/src/Runner/CommandLine.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/tester/src/Runner/CommandLine.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/tester/src/Runner/Job.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/tester/src/Runner/Job.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/tester/src/Runner/Output/ConsolePrinter.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/tester/src/Runner/Output/ConsolePrinter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/tester/src/Runner/Output/JUnitPrinter.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/tester/src/Runner/Output/JUnitPrinter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/tester/src/Runner/Output/Logger.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/tester/src/Runner/Output/Logger.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/tester/src/Runner/Output/TapPrinter.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/tester/src/Runner/Output/TapPrinter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/tester/src/Runner/OutputHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/tester/src/Runner/OutputHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/tester/src/Runner/PhpInterpreter.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/tester/src/Runner/PhpInterpreter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/tester/src/Runner/Runner.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/tester/src/Runner/Runner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/tester/src/Runner/Test.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/tester/src/Runner/Test.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/tester/src/Runner/TestHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/tester/src/Runner/TestHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/tester/src/Runner/info.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/tester/src/Runner/info.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/tester/src/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/tester/src/bootstrap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/tester/src/tester" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/tester/src/tester" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/tester/src/tester.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/tester/src/tester.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/nette/tester/tools/create-phar/create-phar.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nette/tester/tools/create-phar/create-phar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/tracy/tracy/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/tracy/tracy/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/tracy/tracy/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/tracy/tracy/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/tracy/tracy/src/Bridges/Nette/Bridge.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/tracy/tracy/src/Bridges/Nette/Bridge.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/tracy/tracy/src/Bridges/Nette/TracyExtension.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/tracy/tracy/src/Bridges/Nette/TracyExtension.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/tracy/tracy/src/Tracy/Bar.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/tracy/tracy/src/Tracy/Bar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/tracy/tracy/src/Tracy/BlueScreen.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/tracy/tracy/src/Tracy/BlueScreen.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/tracy/tracy/src/Tracy/Debugger.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/tracy/tracy/src/Tracy/Debugger.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/tracy/tracy/src/Tracy/Dumper.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/tracy/tracy/src/Tracy/Dumper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/tracy/tracy/src/Tracy/Helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/tracy/tracy/src/Tracy/Helpers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/tracy/tracy/src/Tracy/assets/Bar/bar.js" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/tracy/tracy/src/Tracy/assets/Bar/bar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/tracy/tracy/src/Tracy/assets/Bar/errors.tab.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/tracy/tracy/src/Tracy/assets/Bar/errors.tab.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/tracy/tracy/src/Tracy/assets/Bar/info.panel.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/tracy/tracy/src/Tracy/assets/Bar/info.panel.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/tracy/tracy/src/Tracy/assets/Bar/loader.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/tracy/tracy/src/Tracy/assets/Bar/loader.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/tracy/tracy/src/Tracy/assets/BlueScreen/bluescreen.css" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/tracy/tracy/src/Tracy/assets/BlueScreen/bluescreen.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/tracy/tracy/src/Tracy/assets/BlueScreen/content.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/tracy/tracy/src/Tracy/assets/BlueScreen/content.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/tracy/tracy/src/shortcuts.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/tracy/tracy/src/shortcuts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/facades/EvaluationFacade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/facades/EvaluationFacade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/facades/NewsFacade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/facades/NewsFacade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/facades/TokenFacade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/facades/TokenFacade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/facades/UserFacade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/facades/UserFacade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -147,10 +22,55 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/AdminModule/presenters/AdminPresenter.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="104" column="24" selection-start-line="104" selection-start-column="24" selection-end-line="104" selection-end-column="24" />
+            <state relative-caret-position="3026">
+              <caret line="178" column="25" lean-forward="true" selection-start-line="178" selection-start-column="25" selection-end-line="178" selection-end-column="25" />
               <folding>
                 <element signature="e#74#307#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/model/facades/UserFacade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
+              <folding>
+                <element signature="e#124#152#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/model/facades/TokenFacade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="30" column="35" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
+              <folding>
+                <element signature="e#124#153#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/model/facades/NewsFacade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/model/facades/EvaluationFacade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="30" column="39" lean-forward="true" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="61" />
+              <folding>
+                <element signature="e#124#158#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -169,52 +89,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/model/EvaluationsManager.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/model/NewsManager.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
-              <folding>
-                <element signature="e#6#93#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/FrontModule/presenters/HomepagePresenter.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
               <folding>
                 <element signature="e#74#109#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/model/RolesManager.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/model/TokenManager.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -228,7 +109,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/readme.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
@@ -241,10 +122,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/model/UsersManager.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="10" column="41" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
+        <entry file="file://$PROJECT_DIR$/DOCUMENTATION/api.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="374">
+                <caret line="22" selection-start-line="22" selection-end-line="22" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -293,7 +177,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/presenters/HomepagePresenter.php" />
         <option value="$PROJECT_DIR$/app/presenters/templates/Homepage/default.latte" />
         <option value="$PROJECT_DIR$/www/css/backend.css" />
         <option value="$PROJECT_DIR$/app/presenters/templates/Api/default.latte" />
@@ -329,10 +212,6 @@
         <option value="$PROJECT_DIR$/app/AdminModule/templates/Admin/evaluations.latte" />
         <option value="$PROJECT_DIR$/app/model/entities/Token.php" />
         <option value="$PROJECT_DIR$/app/config/config.neon" />
-        <option value="$PROJECT_DIR$/app/model/facades/TokenFacade.php" />
-        <option value="$PROJECT_DIR$/app/model/facades/NewsFacade.php" />
-        <option value="$PROJECT_DIR$/app/model/facades/EvaluationFacade.php" />
-        <option value="$PROJECT_DIR$/app/model/facades/UserFacade.php" />
         <option value="$PROJECT_DIR$/app/model/AuthenticatorManager.php" />
         <option value="$PROJECT_DIR$/app/model/EvaluationsManager.php" />
         <option value="$PROJECT_DIR$/app/model/NewsManager.php" />
@@ -340,10 +219,15 @@
         <option value="$PROJECT_DIR$/app/model/TokenManager.php" />
         <option value="$PROJECT_DIR$/app/model/UsersManager.php" />
         <option value="$PROJECT_DIR$/app/ApiModule/presenters/ApiPresenter.php" />
-        <option value="$PROJECT_DIR$/app/AdminModule/presenters/AdminPresenter.php" />
         <option value="$PROJECT_DIR$/app/FrontModule/presenters/HomepagePresenter.php" />
         <option value="$PROJECT_DIR$/app/FrontModule/templates/Homepage/default.latte" />
         <option value="$PROJECT_DIR$/readme.md" />
+        <option value="$PROJECT_DIR$/DOCUMENTATION/api.md" />
+        <option value="$PROJECT_DIR$/app/model/facades/UserFacade.php" />
+        <option value="$PROJECT_DIR$/app/AdminModule/presenters/AdminPresenter.php" />
+        <option value="$PROJECT_DIR$/app/model/facades/EvaluationFacade.php" />
+        <option value="$PROJECT_DIR$/app/model/facades/TokenFacade.php" />
+        <option value="$PROJECT_DIR$/app/model/facades/NewsFacade.php" />
       </list>
     </option>
   </component>
@@ -424,29 +308,27 @@
               <item name="newsNette" type="b2602c69:ProjectViewProjectNode" />
               <item name="newsNette" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="FrontModule" type="462c0819:PsiDirectoryNode" />
+              <item name="AdminModule" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="newsNette" type="b2602c69:ProjectViewProjectNode" />
               <item name="newsNette" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="FrontModule" type="462c0819:PsiDirectoryNode" />
+              <item name="AdminModule" type="462c0819:PsiDirectoryNode" />
               <item name="presenters" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="newsNette" type="b2602c69:ProjectViewProjectNode" />
               <item name="newsNette" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="FrontModule" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="newsNette" type="b2602c69:ProjectViewProjectNode" />
               <item name="newsNette" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="FrontModule" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="Homepage" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="facades" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="newsNette" type="b2602c69:ProjectViewProjectNode" />
@@ -523,12 +405,12 @@
       <workItem from="1549007905123" duration="6594000" />
       <workItem from="1549108232425" duration="1464000" />
       <workItem from="1549265480029" duration="11326000" />
-      <workItem from="1549351546900" duration="14302000" />
+      <workItem from="1549351546900" duration="15825000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="208781000" />
+    <option name="totallyTimeSpent" value="210304000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -559,13 +441,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/nette/security/src/Security/IIdentity.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -774,46 +649,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/facades/NewsFacade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="23" column="46" lean-forward="true" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
-          <folding>
-            <element signature="e#124#153#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/facades/UserFacade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-          <folding>
-            <element signature="e#124#152#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/facades/EvaluationFacade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
-          <folding>
-            <element signature="e#124#158#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/facades/TokenFacade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
-          <folding>
-            <element signature="e#124#153#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/model/AuthenticatorManager.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -872,20 +707,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/AdminModule/presenters/AdminPresenter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="104" column="24" selection-start-line="104" selection-start-column="24" selection-end-line="104" selection-end-column="24" />
-          <folding>
-            <element signature="e#74#307#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/FrontModule/presenters/HomepagePresenter.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
           <folding>
             <element signature="e#74#109#0#PHP" expanded="true" />
           </folding>
@@ -906,6 +731,63 @@
             <caret column="33" selection-start-column="33" selection-end-column="33" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DOCUMENTATION/api.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="374">
+            <caret line="22" selection-start-line="22" selection-end-line="22" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/AdminModule/presenters/AdminPresenter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3026">
+          <caret line="178" column="25" lean-forward="true" selection-start-line="178" selection-start-column="25" selection-end-line="178" selection-end-column="25" />
+          <folding>
+            <element signature="e#74#307#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/facades/UserFacade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
+          <folding>
+            <element signature="e#124#152#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/facades/TokenFacade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="30" column="35" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
+          <folding>
+            <element signature="e#124#153#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/facades/NewsFacade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/facades/EvaluationFacade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="30" column="39" lean-forward="true" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="61" />
+          <folding>
+            <element signature="e#124#158#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -24,15 +24,15 @@ class TokenFacade{
         $this->entityManager = $entityManager;
     }
 
-    public function getAllNews(){
+    public function getTokenAll(){
         return $this->entityManager->getRepository($this->entityName)->findAll();
     }
 
-    public function getTokenId($id){
+    public function getTokenId(int $id){
         return isset($id) ? $this->entityManager->find($this->entityName, $id) : NULL;
     }
 
-    public function getTokenParam($parameters){
+    public function getTokenParam(array $parameters = []){
         return isset($parameters) ? $this->entityManager->getRepository($this->entityName)->findBy($parameters) : NULL;
     }
 

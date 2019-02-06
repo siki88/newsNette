@@ -44,8 +44,8 @@ final class AdminPresenter extends BasePresenter{
 
 //update doctrine - OK
     public function renderDefault(){
-        $this->template->usersCount = count($this->userFacade->getAllUsers());
-        $this->template->newsCount = count($this->newsFacade->getAllNews());
+        $this->template->usersCount = $this->userFacade->getUsersCount();
+        $this->template->newsCount = $this->newsFacade->getNewsCount();
 
         //metody user
         $this->template->role = $this->user->getIdentity()->getRoles()[0];
@@ -58,7 +58,7 @@ final class AdminPresenter extends BasePresenter{
 
 //update doctrine - chybí inch_up + inch_down
     public function renderNews(){
-        $this->template->newsValues = $this->newsFacade->getAllNews();
+        $this->template->newsValues = $this->newsFacade->getNewsAll();
      //   $this->template->newsKeys = $this->newsManager->getNameColumns()->getColumns('news');
     //    $this->template->newsValues = $this->newsManager->getPublicNewsWithInch();
       //  $this->template->newsValues = $this->newsFacade->getPublicNewsWithInch();
@@ -69,7 +69,7 @@ final class AdminPresenter extends BasePresenter{
 
 //update doctrine - OK
     public function renderUsers(){
-        $this->template->usersValues = $this->userFacade->getAllUsers();
+        $this->template->usersValues = $this->userFacade->getUsersAll();
     }
 
     public function actionUsers(){
