@@ -89,6 +89,7 @@ final class AdminPresenter extends BasePresenter{
     }
 
     private function controlUserLogin(){
+            //pokud je přihlášený a pokud má roli administrátora
         if($this->getUser()->isLoggedIn() && in_array("admin", $this->user->getIdentity()->getRoles())){
             $this->user->setExpiration('15 minutes');
         }elseif($this->getAction() !== 'login'){
@@ -102,10 +103,10 @@ final class AdminPresenter extends BasePresenter{
         $this->redirect('Homepage:default');
     }
 
-//update doctrine - ČEKÁ
-    public function actionEvaluationsDelete($evaluationsId){
-        $status = $this->evaluationsManager->setPublicEvaluationDelete($evaluationsId);
-        $this->flashMessage("Smazáno $status hodnocení" );
+//update doctrine - OK
+    public function actionEvaluationsDelete(int $evaluationsId){
+        $status = $this->evaluationFacade->deleteEvaluationId($evaluationsId);
+        $this->flashMessage($status);
         $this->redirect('Admin:news');
     }
 
