@@ -1,5 +1,7 @@
 <?php
 
+//ČEKÁ NA UGRADE NA DOCTRINE
+
 namespace App\Presenters;
 
 use Nette\Application\UI\Presenter,
@@ -10,8 +12,9 @@ use Nette\Application\UI\Presenter,
      App\Model\TokenManager,
      Nette\Utils\Validators,
      Nette\Application\Responses\JsonResponse;
+use App\Presenters\BasePresenter;
 
-final class ApiPresenter extends Presenter{
+final class ApiPresenter extends BasePresenter{
 
     private $newsManager,
              $usersManager,
@@ -35,7 +38,8 @@ final class ApiPresenter extends Presenter{
     public function actionDefault(){
     }
 
-
+//pokud nepošlu password zahlási to error 500
+//pokud není vytvoření token zahlásí error 500
     public function actionLogin(){
         //whitelist
         $securityArray = ['email','password'];
@@ -50,6 +54,12 @@ final class ApiPresenter extends Presenter{
                             'description' => 'Invalid email format'
                         ];
                     }
+                $this->response($status);
+            }else{
+                $status = [
+                    'code' => 406,
+                    'description' => 'Invalid post format'
+                ];
                 $this->response($status);
             }
     }

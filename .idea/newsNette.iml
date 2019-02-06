@@ -3,6 +3,24 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/annotations" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/collections" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/common" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/dbal" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/event-manager" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/inflector" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/instantiator" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/lexer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/orm" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/persistence" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/reflection" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/kdyby/annotations" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/kdyby/console" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/kdyby/doctrine" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/kdyby/doctrine-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/kdyby/events" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/kdyby/strict-objects" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/latte/latte" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nette/application" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nette/bootstrap" />
@@ -21,6 +39,9 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/nette/security" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nette/tester" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nette/utils" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/console" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-mbstring" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/tracy/tracy" />
     </content>
     <orderEntry type="inheritedJdk" />

@@ -12,6 +12,13 @@ session:
 	expiration: 1 days
 
 
+
+extensions:
+    console: Kdyby\Console\DI\ConsoleExtension
+    events: Kdyby\Events\DI\EventsExtension
+    annotations: Kdyby\Annotations\DI\AnnotationsExtension
+    doctrine: Kdyby\Doctrine\DI\OrmExtension
+
 services:
 	router: App\RouterFactory::createRouter
 	- App\Model\NewsManager
@@ -19,6 +26,23 @@ services:
 	- App\Model\EvaluationsManager
 	- App\Model\TokenManager
 	- App\Model\RolesManager
+	- App\Model\Facades\UserFacade
+	- App\Model\Facades\NewsFacade
+	- App\Model\Facades\EvaluationFacade
+	- App\Model\Facades\TokenFacade
 	authenticator: App\Model\AuthenticatorManager
 #	adminAuthenticator: App\Model\AuthenticatorManager
 
+
+database:
+	dsn: 'mysql:host=127.0.0.1;dbname=czsiki'
+	user: 'czsiki'
+	password: 'czsiki'
+
+doctrine:
+        user: czsiki
+        password: czsiki
+        dbname: czsiki
+        host: localhost
+        metadata:
+                App: %appDir%

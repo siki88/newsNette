@@ -6,6 +6,8 @@
  * Time: 11:12
  */
 
+// PO KONEČNÉM UPGRADE NA DOCTRINE SMAZAT
+
 namespace App\Model;
 
 use Nette,

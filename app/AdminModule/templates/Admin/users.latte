@@ -44,18 +44,23 @@
 	<table>
 		<thead>
 			<tr>
-				<th n:foreach="$usersKeys as $usersKey">{$usersKey['name']}</th>
+				<th>id</th>
+				<th>name</th>
+				<th>email</th>
+				<th>password</th>
+				<th>roles</th>
+				<th>registration date</th>
 			</tr>
 		</thead>
 
 		<tbody>
 			<tr n:foreach="$usersValues as $usersValue">
 				<td>{$usersValue->id}</td>
-				<td>{$usersValue->username}</td>
+				<td>{$usersValue->name}</td>
 				<td>{$usersValue->email}</td>
 				<td>{$usersValue->password}</td>
 				<td>{$usersValue->role}</td>
-				<td class="date">{$usersValue->created_at|date:'F j, Y'}</td>
+				<td class="date">{$usersValue->registrationDate|date:'F j, Y'}</td>
 			</tr>
 		</tbody>
 	</table>

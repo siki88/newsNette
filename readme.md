@@ -1,1 +1,1 @@
-Nette news Web Project
+Nette news Web Project AS Doctrine 

@@ -10,8 +10,9 @@ use Nette\Application\UI\Presenter,
      App\Model\UsersManager,
      App\Model\EvaluationsManager,
      App\Model\RolesManager;
+use App\Presenters\BasePresenter;
 
-final class AdminPresenter extends Presenter{
+final class AdminPresenter extends BasePresenter{
 
     private $newsManager,
              $usersManager,
@@ -26,14 +27,27 @@ final class AdminPresenter extends Presenter{
     }
 
 
+    /**
+     * Volá se na začátku každé akce, každého presenteru a zajišťuje inicializaci entity uživatele.
+     */
     public function startup(){
         parent::startup();
         $this->controlUserLogin();
     }
 
+    /**
+     * Volá se před vykreslením každého presenteru a předává společné proměnné do celkového layoutu webu.
+     */
+    public function beforeRender(){
+        parent::beforeRender();
+    }
+
+//update doctrine - OK
     public function renderDefault(){
-        $this->template->newsCount = $this->newsManager->getPublicNews()->count();
-        $this->template->usersCount = $this->usersManager->getPublicUsers()->count();
+        $this->template->usersCount = count($this->userFacade->getAllUsers());
+        $this->template->newsCount = count($this->newsFacade->getAllNews());
+
+        //metody user
         $this->template->role = $this->user->getIdentity()->getRoles()[0];
         $this->template->email = $this->user->getIdentity()->email;
     }
@@ -42,28 +56,30 @@ final class AdminPresenter extends Presenter{
 
     }
 
-
+//update doctrine - chybí inch_up + inch_down
     public function renderNews(){
-        $this->template->newsKeys = $this->newsManager->getNameColumns()->getColumns('news');
-        $this->template->newsValues = $this->newsManager->getPublicNewsWithInch();
+        $this->template->newsValues = $this->newsFacade->getAllNews();
+     //   $this->template->newsKeys = $this->newsManager->getNameColumns()->getColumns('news');
+    //    $this->template->newsValues = $this->newsManager->getPublicNewsWithInch();
+      //  $this->template->newsValues = $this->newsFacade->getPublicNewsWithInch();
     }
 
     public function actionNews(){
     }
 
-
+//update doctrine - OK
     public function renderUsers(){
-        $this->template->usersKeys = $this->usersManager->getNameColumns()->getColumns('users');
-        $this->template->usersValues = $this->usersManager->getPublicUsers();
+        $this->template->usersValues = $this->userFacade->getAllUsers();
     }
 
     public function actionUsers(){
     }
 
+//update doctrine - OK
     public function renderEvaluations($newsId){
-        $this->template->evaluationsKeys = $this->evaluationsManager->getNameColumns()->getColumns('evaluation');
-        $this->template->evaluationsValues = $this->evaluationsManager->getPublicEvaluationNewsId($newsId);
-        $this->template->titleNews = $this->newsManager->getPublicNewsId($newsId)->short_text;
+        $parametersEvaluation = array('news_id' => $newsId);
+        $this->template->evaluationsValues = $this->evaluationFacade->getEvaluationParam($parametersEvaluation);
+        $this->template->titleNews = $this->newsFacade->getNewsId($newsId)->shortText;
     }
 
     public function actionEvaluations($newsId){
@@ -73,7 +89,6 @@ final class AdminPresenter extends Presenter{
     }
 
     private function controlUserLogin(){
-
         if($this->getUser()->isLoggedIn() && in_array("admin", $this->user->getIdentity()->getRoles())){
             $this->user->setExpiration('15 minutes');
         }elseif($this->getAction() !== 'login'){
@@ -87,6 +102,7 @@ final class AdminPresenter extends Presenter{
         $this->redirect('Homepage:default');
     }
 
+//update doctrine - ČEKÁ
     public function actionEvaluationsDelete($evaluationsId){
         $status = $this->evaluationsManager->setPublicEvaluationDelete($evaluationsId);
         $this->flashMessage("Smazáno $status hodnocení" );

@@ -8,6 +8,8 @@
 
 namespace App\Model;
 
+// PO KONEČNÉM UPGRADE NA DOCTRINE SMAZAT
+
 use Nette,
      Nette\Database\Context,
      Nette\Security\Passwords;
@@ -26,15 +28,18 @@ class UsersManager {
         return $this->database->table('users');
     }
 
+    /*
     public function getNameColumns(){
         return $this->database->getConnection()->GetSupplementalDriver();
     }
+    */
 
     public function setAddUser($values){
         $values->password = Passwords::hash($values->password);
         $this->database->table('users')->insert($values);
     }
 
+    //nahrazen
     public function getPublicUsersRole(){
         return $this->getPublicUsers()->select('users.* , :roles.name')->joinWhere(':roles', 'users.roles_id = :roles.id');
 
