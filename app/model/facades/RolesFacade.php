@@ -8,36 +8,35 @@
 
 namespace App\Model\Facades;
 
-use App\Model\Entities\User;
 use App\Model\Entities\Roles;
 use Kdyby\Doctrine\EntityManager;
 
-class UserFacade{
+class RolesFacade{
 
     /**
      *@inject
      *@var \Kdyby\Doctrine\EntityManager
      */
     public $entityManager;
-    private $entityName = User::class;
+    private $entityName = Roles::class;
 
     public function __construct(EntityManager $entityManager){
         $this->entityManager = $entityManager;
     }
 
-    public function getUsersAll(){
+    public function getRolesAll(){
         return $this->entityManager->getRepository($this->entityName)->findAll();
     }
 
-    public function getUsersCount(array $parameters = []){
+    public function getRolesCount(array $parameters = []){
         return $this->entityManager->getRepository($this->entityName)->count($parameters);
     }
 
-    public function getUserId(int $id){
+    public function getRolesId(int $id){
         return isset($id) ? $this->entityManager->find($this->entityName, $id) : NULL;
     }
 
-    public function getUsersFindPairs($value){
+    public function getRolesFindPairs($value){
         return $this->entityManager->getRepository($this->entityName)->findPairs($value);
     }
 

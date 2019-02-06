@@ -30,6 +30,7 @@ services:
 	- App\Model\Facades\NewsFacade
 	- App\Model\Facades\EvaluationFacade
 	- App\Model\Facades\TokenFacade
+	- App\Model\Facades\RolesFacade
 	authenticator: App\Model\AuthenticatorManager
 #	adminAuthenticator: App\Model\AuthenticatorManager
 

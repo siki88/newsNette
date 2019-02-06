@@ -46,7 +46,6 @@ final class AdminPresenter extends BasePresenter{
     public function renderDefault(){
         $this->template->usersCount = $this->userFacade->getUsersCount();
         $this->template->newsCount = $this->newsFacade->getNewsCount();
-
         //metody user
         $this->template->role = $this->user->getIdentity()->getRoles()[0];
         $this->template->email = $this->user->getIdentity()->email;
@@ -59,9 +58,6 @@ final class AdminPresenter extends BasePresenter{
 //update doctrine - chybí inch_up + inch_down
     public function renderNews(){
         $this->template->newsValues = $this->newsFacade->getNewsAll();
-     //   $this->template->newsKeys = $this->newsManager->getNameColumns()->getColumns('news');
-    //    $this->template->newsValues = $this->newsManager->getPublicNewsWithInch();
-      //  $this->template->newsValues = $this->newsFacade->getPublicNewsWithInch();
     }
 
     public function actionNews(){
@@ -88,6 +84,7 @@ final class AdminPresenter extends BasePresenter{
     public function actionLogin(){
     }
 
+    //metoda kontrola přihlášení a role
     private function controlUserLogin(){
             //pokud je přihlášený a pokud má roli administrátora
         if($this->getUser()->isLoggedIn() && in_array("admin", $this->user->getIdentity()->getRoles())){
@@ -97,6 +94,7 @@ final class AdminPresenter extends BasePresenter{
         }
     }
 
+    //metoda odhlášení uživatele
     public function actionOut(){
         $this->getUser()->logout();
         $this->flashMessage('Odhlášení bylo úspěšné');
@@ -133,7 +131,7 @@ final class AdminPresenter extends BasePresenter{
                 $form->getElementPrototype()->class = 'myForm';
                 $form->addText('short_text', 'Nadpis novinky:')
                     ->setRequired();
-                $form->addSelect('users_id', 'Autor novinky:', $this->usersManager->getPublicUsers()->fetchPairs('id', 'username'));
+                $form->addSelect('users_id', 'Autor novinky:', $this->userFacade->getUsersFindPairs('name'));
                 $form->addTextArea('text', 'Text novinky:')
                     ->setRequired();
                 $form->addSubmit('send', 'Přidat novinku')
@@ -151,7 +149,7 @@ final class AdminPresenter extends BasePresenter{
                 $form->addPassword('password', 'Heslo')
                     ->setRequired()
                     ->setType('password');
-                $form->addSelect('roles_id', 'Oprávnění:', $this->rolesManager->getPublicRoles()->fetchPairs('id', 'name'));
+                $form->addSelect('roles_id', 'Oprávnění:', $this->rolesFacade->getRolesFindPairs('name'));
                 $form->addSubmit('send', 'Přidat uživatele')
                     ->setAttribute('class', 'button');
                 $form->onSuccess[] = [$this, 'formSucceded'];

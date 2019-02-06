@@ -18,6 +18,7 @@ use App\Model\Entities\User as UserEntity;
 use App\Model\Facades\UserFacade;
 use App\Model\Facades\NewsFacade;
 use App\Model\Facades\EvaluationFacade;
+use App\Model\Facades\RolesFacade;
 //use Kdyby\Translation\Translator;
 //use Nette\Bridges\ApplicationLatte\Template;
 
@@ -55,6 +56,11 @@ class BasePresenter extends Presenter{
      */
     public $evaluationFacade;
 
+    /**
+     * @var RolesFacade Fasáda pro manipulaci s hodnocením.
+     * @inject
+     */
+    public $rolesFacade;
 
     /**
      * přetížíme metodu startup()
