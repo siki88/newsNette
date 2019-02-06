@@ -33,6 +33,6 @@ class Roles extends \Kdyby\Doctrine\Entities\BaseEntity{
      * Sloupec pro datum registrace.
      * @ORM\Column(name="`created_at`", type="datetime")
      */
-    protected $registrationDate;
+    protected $created_at;
 
 }

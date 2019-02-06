@@ -32,30 +32,30 @@ class User extends \Kdyby\Doctrine\Entities\BaseEntity{
      * Sloupec pro jméno.
      * @ORM\Column(name="`username`", type="string")
      */
-    protected $name;
+    protected $username;
 
     /**
      * Sloupec pro email.
-     * @ORM\Column(type="string")
+     * @ORM\Column(name="`email`", type="string")
      */
     protected $email;
 
     /**
      * Sloupec pro heslo.
-     * @ORM\Column(type="string")
+     * @ORM\Column(name="`password`", type="string")
      */
     protected $password;
 
     /**
-     * Sloupec role uživatele. Význam hodnot viz. konstanty pro uživatelské role.
+     * Sloupec role
      * @ORM\Column(name="`roles_id`", type="integer")
      */
-    protected $role;
+    protected $roles_id;
 
     /**
      * Sloupec pro datum registrace.
      * @ORM\Column(name="`created_at`", type="datetime")
      */
-    protected $registrationDate;
+    protected $created_at;
 
 }

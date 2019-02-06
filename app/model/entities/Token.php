@@ -12,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="users")
+ * @ORM\Table(name="tokens")
  */
 class Token extends \Kdyby\Doctrine\Entities\BaseEntity{
 
@@ -32,26 +32,26 @@ class Token extends \Kdyby\Doctrine\Entities\BaseEntity{
 
     /**
      * Sloupec pro user_id.
-     * @ORM\Column(type="integer")
+     * @ORM\Column(name="`user_id`",type="integer")
      */
-    protected $userId;
+    protected $user_id;
 
     /**
      * Sloupec pro datum registrace.
      * @ORM\Column(name="`created_at`", type="datetime")
      */
-    protected $registrationDate;
+    protected $created_at;
 
     /**
      * Sloupec pro datum update.
      * @ORM\Column(name="`update_at`", type="datetime")
      */
-    protected $registrationUpdate;
+    protected $update_at;
 
     /**
      * Sloupec pro datum expirace.
      * @ORM\Column(name="`expirate_at`", type="datetime")
      */
-    protected $registrationExpirate;
+    protected $expirate_at;
 
 }

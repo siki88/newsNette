@@ -56,11 +56,11 @@
 		<tbody>
 			<tr n:foreach="$usersValues as $usersValue">
 				<td>{$usersValue->id}</td>
-				<td>{$usersValue->name}</td>
+				<td>{$usersValue->username}</td>
 				<td>{$usersValue->email}</td>
 				<td>{$usersValue->password}</td>
-				<td>{$usersValue->role}</td>
-				<td class="date">{$usersValue->registrationDate|date:'F j, Y'}</td>
+				<td>{$usersValue->roles_id}</td>
+				<td class="date">{$usersValue->created_at|date:'F j, Y'}</td>
 			</tr>
 		</tbody>
 	</table>

@@ -75,7 +75,7 @@ final class AdminPresenter extends BasePresenter{
     public function renderEvaluations($newsId){
         $parametersEvaluation = array('news_id' => $newsId);
         $this->template->evaluationsValues = $this->evaluationFacade->getEvaluationParam($parametersEvaluation);
-        $this->template->titleNews = $this->newsFacade->getNewsId($newsId)->shortText;
+        $this->template->titleNews = $this->newsFacade->getNewsId($newsId)->short_text;
     }
 
     public function actionEvaluations($newsId){

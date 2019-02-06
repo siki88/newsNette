@@ -27,7 +27,7 @@ class News extends \Kdyby\Doctrine\Entities\BaseEntity{
      * Sloupec pro short_text.
      * @ORM\Column(name="`short_text`", type="string")
      */
-    protected $shortText;
+    protected $short_text;
 
     /**
      * Sloupec pro text.
@@ -45,7 +45,7 @@ class News extends \Kdyby\Doctrine\Entities\BaseEntity{
      * Sloupec pro user_id.
      * @ORM\Column(name="`users_id`", type="string")
      */
-    protected $userId;
+    protected $users_id;
 
     /**
      * Sloupec pro image.
@@ -57,6 +57,6 @@ class News extends \Kdyby\Doctrine\Entities\BaseEntity{
      * Sloupec pro datum registrace.
      * @ORM\Column(name="`created_at`", type="datetime")
      */
-    protected $registrationDate;
+    protected $created_at;
 
 }
