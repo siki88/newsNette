@@ -1,6 +1,11 @@
 user.name: admin@example.com
 password:  admin
 
+OR
+
+user.name: test@example.com
+password:  test
+
 
 API:
 ##.../api/news
