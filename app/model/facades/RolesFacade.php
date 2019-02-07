@@ -40,6 +40,10 @@ class RolesFacade{
         return $this->entityManager->getRepository($this->entityName)->findPairs($value);
     }
 
+    public function getRolesParam(array $parameters = []){
+        return isset($parameters) ? $this->entityManager->getRepository($this->entityName)->findBy($parameters) : NULL;
+    }
+
 
 
 

@@ -6,29 +6,29 @@
  * Time: 11:12
  */
 
-// PO KONEČNÉM UPGRADE NA DOCTRINE SMAZAT
-
 namespace App\Model;
 
 use Nette,
-     Nette\Database\Context,
      Nette\Security\IAuthenticator;
+
+use App\Model\Facades\UserFacade;
+use App\Model\Facades\RolesFacade;
 
 class AuthenticatorManager implements IAuthenticator {
 
     use Nette\SmartObject;
 
-    private $database,
-         $usersManager,
-         $tokenManager,
-         $rolesManager;
+    private $tokenManager;
+    private $userFacade;
+    private $rolesFacade;
 
-    public function __construct(Context $database, UsersManager $usersManager, TokenManager $tokenManager, RolesManager $rolesManager){
-        $this->database = $database;
-        $this->usersManager = $usersManager;
+    public function __construct(TokenManager $tokenManager, UserFacade $userFacade, RolesFacade $rolesFacade){
         $this->tokenManager = $tokenManager;
-        $this->rolesManager = $rolesManager;
+        $this->userFacade = $userFacade;
+        $this->rolesFacade = $rolesFacade;
     }
+
+
 
 // http://php.net/manual/en/function.http-response-code.php
 
@@ -48,13 +48,14 @@ class AuthenticatorManager implements IAuthenticator {
 
     private function defaultAuthenticate(array $credentials){
         list($email, $password) = $credentials;
-         $row = $this->usersManager->getPublicUsers()->where('email', $email)->fetch();
+        $parametersUser = array('email' => $email);
+         $row = $this->userFacade->getUsersOneParam($parametersUser);
             if (!$row) {
                 throw new Nette\Security\AuthenticationException('User not found.');
             }elseif(!Nette\Security\Passwords::verify($password, $row->password)) {
                 throw new Nette\Security\AuthenticationException('Invalid password.');
             }
-            $role = $this->rolesManager->setRolesId($row->roles_id);
+         $role = $this->rolesFacade->getRolesId($row->roles_id);
         $authorize = new Nette\Security\Identity($row->id, $role->name, ['email' => $row->email]); //->getData()
         return($authorize);
     }
@@ -62,7 +63,8 @@ class AuthenticatorManager implements IAuthenticator {
 
     private function customAuthenticate($credentials){
         list($email, $password) = $credentials;
-        $row = $this->usersManager->getPublicUsers()->where('email', $email)->fetch();
+        $parametersUser = array('email' => $email);
+        $row = $this->userFacade->getUsersOneParam($parametersUser);
         if (!$row){
             $data = ['code' => 404,'description' => 'User not found.'];
         }elseif(!Nette\Security\Passwords::verify($password, $row->password)) {
@@ -70,7 +72,6 @@ class AuthenticatorManager implements IAuthenticator {
         }else{
             //controll and create token
             $tokenData = $this->tokenManager->setTokenUserId($row->id);
-
             $data = [
                 'email' => $row->email,
                 'token' => $tokenData['token'],

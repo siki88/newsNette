@@ -131,7 +131,7 @@ final class AdminPresenter extends BasePresenter{
                 $form->getElementPrototype()->class = 'myForm';
                 $form->addText('short_text', 'Nadpis novinky:')
                     ->setRequired();
-                $form->addSelect('users_id', 'Autor novinky:', $this->userFacade->getUsersFindPairs('name'));
+                $form->addSelect('users_id', 'Autor novinky:', $this->userFacade->getUsersFindPairs('username'));
                 $form->addTextArea('text', 'Text novinky:')
                     ->setRequired();
                 $form->addSubmit('send', 'Přidat novinku')

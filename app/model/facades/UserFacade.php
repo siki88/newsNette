@@ -38,7 +38,15 @@ class UserFacade{
     }
 
     public function getUsersFindPairs($value){
-        return $this->entityManager->getRepository($this->entityName)->findPairs($value);
+        return isset($value) ? $this->entityManager->getRepository($this->entityName)->findPairs($value) : NULL;
+    }
+
+    public function getUsersParam(array $parameters = []){
+        return isset($parameters) ? $this->entityManager->getRepository($this->entityName)->findBy($parameters) : NULL;
+    }
+
+    public function getUsersOneParam(array $parameters = []){
+        return isset($parameters) ? $this->entityManager->getRepository($this->entityName)->findOneBy($parameters) : NULL;
     }
 
 

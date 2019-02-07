@@ -36,6 +36,10 @@ class TokenFacade{
         return isset($parameters) ? $this->entityManager->getRepository($this->entityName)->findBy($parameters) : NULL;
     }
 
+    public function getTokenOneParam(array $parameters = []){
+        return isset($parameters) ? $this->entityManager->getRepository($this->entityName)->findOneBy($parameters) : NULL;
+    }
+
 
 
 

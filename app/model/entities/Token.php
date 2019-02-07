@@ -38,9 +38,9 @@ class Token extends \Kdyby\Doctrine\Entities\BaseEntity{
 
     /**
      * Sloupec pro datum registrace.
-     * @ORM\Column(name="`created_at`", type="datetime")
+     * @ORM\Column(name="`create_at`", type="datetime")
      */
-    protected $created_at;
+    protected $create_at;
 
     /**
      * Sloupec pro datum update.

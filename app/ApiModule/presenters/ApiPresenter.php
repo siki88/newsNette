@@ -36,6 +36,11 @@ final class ApiPresenter extends BasePresenter{
 
 
     public function actionDefault(){
+        $status = [
+            'code' => 406,
+            'description' => 'Invalid post address'
+        ];
+        $this->response($status);
     }
 
 //pokud nepošlu password zahlási to error 500
@@ -44,21 +49,21 @@ final class ApiPresenter extends BasePresenter{
         //whitelist
         $securityArray = ['email','password'];
         $httpRequest = $this->getHttpRequest();
-            if($httpRequest->isMethod('POST')){
+            if($httpRequest->isMethod('POST') && array_key_exists('email', $httpRequest->getPost()) && array_key_exists('password', $httpRequest->getPost())){
                 $request = array_intersect_key($httpRequest->getPost(), array_flip($securityArray));
-                    if(Validators::isEmail($request['email'])){
+                    if(Validators::isEmail($request['email']) && count($request) == 2){
                         $status = $this->authenticatorManager->authenticate($request)->getData();
                     }else{
                         $status = [
                             'code' => 406,
-                            'description' => 'Invalid email format'
+                            'description' => '\'Invalid email, password format OR email, password is empty OR none exists parameter.'
                         ];
                     }
                 $this->response($status);
             }else{
                 $status = [
                     'code' => 406,
-                    'description' => 'Invalid post format'
+                    'description' => 'Invalid post format OR email or password key none exists'
                 ];
                 $this->response($status);
             }

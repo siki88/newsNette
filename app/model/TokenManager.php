@@ -13,19 +13,26 @@ namespace App\Model;
 use Nette,
      Nette\Database\Context,
      Nette\Utils\DateTime,
-     Nette\Utils\Validators;
+     Nette\Utils\Validators,
+     Nette\Utils\Random;
 
+use App\Model\Facades\TokenFacade;
 
 class TokenManager  {
 
     use Nette\SmartObject;
 
+    //old
     private $database,
              $usersManager;
 
-    public function __construct(Context $database, UsersManager $usersManager){
+    private $tokenFacade;
+
+    public function __construct(Context $database, UsersManager $usersManager, TokenFacade $tokenFacade){
         $this->database = $database;
         $this->usersManager = $usersManager;
+
+        $this->tokenFacade = $tokenFacade;
     }
 
     private function getToken(){
@@ -39,10 +46,10 @@ class TokenManager  {
                     pokud je expirační datum menší než aktuální -> pouze prodlouží expirační datum
                     pokud je expirační datum větší než aktuální -> vygeneruje nový token a prodlouží expirační datum
     */
-    public function setTokenUserId($user_id){
+    public function setTokenUserId(int $user_id){
         //controll exists old token
-        $controll = $this->getToken()->select('id,expirate_at')->where('user_id', $user_id)->fetch();
-
+        $parametersToken = array('user_id' => $user_id);
+        $controll = $this->tokenFacade->getTokenOneParam($parametersToken);
         if($controll){ // exists user token -> update
             //pokud existuje token pro user_id, ale expirace je stará - vygenerujeme nový token
             $status = 'update';
@@ -95,9 +102,11 @@ class TokenManager  {
         ];
 
         if($status === 'insert'){
-            $randomBytes = random_bytes(64);
-            $token = base64_encode($randomBytes);
-             $createTokenTable['token'] = $token;
+            //$randomBytes = random_bytes(64);
+            //$token = base64_encode($randomBytes);
+            $myToken = Random::generate(88, '0–9a-zA-Z');
+            //array_push($createTokenTable, $myToken);
+            $createTokenTable['token'] = $myToken;
         }
 
         return($createTokenTable);
