@@ -1,4 +1,4 @@
-user.name: admin@example.com
+email: admin@example.com
 password:  admin
 
 OR
