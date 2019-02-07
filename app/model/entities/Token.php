@@ -38,20 +38,20 @@ class Token extends \Kdyby\Doctrine\Entities\BaseEntity{
 
     /**
      * Sloupec pro datum registrace.
-     * @ORM\Column(name="`create_at`", type="datetime")
+     * @ORM\Column(name="`created_at`", type="datetime")
      */
-    protected $create_at;
+    protected $created_at;
 
     /**
      * Sloupec pro datum update.
-     * @ORM\Column(name="`update_at`", type="datetime")
+     * @ORM\Column(name="`updated_at`", type="datetime")
      */
-    protected $update_at;
+    protected $updated_at;
 
     /**
      * Sloupec pro datum expirace.
-     * @ORM\Column(name="`expirate_at`", type="datetime")
+     * @ORM\Column(name="`expirated_at`", type="datetime")
      */
-    protected $expirate_at;
+    protected $expirated_at;
 
 }

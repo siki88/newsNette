@@ -17,6 +17,7 @@ use Nette,
      Nette\Utils\Random;
 
 use App\Model\Facades\TokenFacade;
+//use Doctrine\ORM\Mapping as ORM;
 
 class TokenManager  {
 
@@ -48,32 +49,32 @@ class TokenManager  {
     */
     public function setTokenUserId(int $user_id){
         //controll exists old token
+//upgrade to doctrine - OK
         $parametersToken = array('user_id' => $user_id);
         $controll = $this->tokenFacade->getTokenOneParam($parametersToken);
         if($controll){ // exists user token -> update
             //pokud existuje token pro user_id, ale expirace je stará - vygenerujeme nový token
             $status = 'update';
             //kontrola expirace
-            if(DateTime::from('0')->format('Y-m-d H:m:s') > $controll->expirate_at->format('Y-m-d H:m:s')){
+            if(DateTime::from('0')->format('Y-m-d H:m:s') > $controll->expirated_at->format('Y-m-d H:m:s')){
                 $status = 'insert';
             }
-
+            //prodloužení expirace
              $this->expirateExtended($controll->id, $user_id, $status);
 
-            return $this->getToken()->select('token')->get($controll->id)->toArray();
-        }else{ // none exists -> insert
+            //vytáhnutí údajů tokenu
+            return $this->tokenFacade->getTokenId($controll->id);
+        }else{ // none exists token -> insert
+
+//upgrade to doctrine - CEKA
             $tokenTable = $this->getToken()->insert($this->generateTableToken($user_id,'insert'));
-            return $this->getToken()->select('token')->get($tokenTable->id)->toArray();
+            return $this->tokenFacade->getTokenId($tokenTable->id);
+
         }
     }
 
 
-
-    public function setTokenToken($token){
-        return $this->getToken()->where('token', $token)->fetch();
-    }
-
-    //vyhledá zda existuje token, pokud ano, prodlouží expiraci, pokud ne vyhodí false
+    //vyhledá zda existuje token, pokud ano, prodlouží expiraci, pokud ne vyhodí false - používá se v ApiPresenteru
     public function getControlExpiration($token){
         $tokenTable = $this->setTokenToken($token);
         if($tokenTable && Validators::isNumericInt($tokenTable->id)){
@@ -84,28 +85,35 @@ class TokenManager  {
         }
     }
 
+//upgrade to doctrine - OK
+    public function setTokenToken($token){
+        $parametersToken = array('token' => $token);
+        return $this->tokenFacade->getTokenOneParam($parametersToken);
+        //  return $this->getToken()->where('token', $token)->fetch();
+    }
 
+//upgrade to doctrine - OK
     // prodloužení platnosti, a za určitých podmínek změna tokenu
     private function expirateExtended($id,$user_id, $status){
-        $this->getToken()->where('id',$id)->update($this->generateTableToken($user_id, $status));
+        $parametersTokenQuery = array('id' => $id);
+        $this->tokenFacade->setToken($this->generateTableToken($user_id, $status),$parametersTokenQuery);
     }
 
 
     private function generateTableToken($user_id, $status){
 
-        $actualDate = DateTime::from('0');
+        $actualDate = DateTime::from(date('Y-m-d H:m:s'));
+        $update = DateTime::createFromFormat('Y-m-d H:m:s', $actualDate);
+        $expirate= DateTime::createFromFormat('Y-m-d H:m:s', $actualDate->modify('+1 hours'));
 
         $createTokenTable = [
-            'user_id' => $user_id,
-            'update_at' => $actualDate->format('Y-m-d H:m:s'),
-            'expirate_at' => $actualDate->modify('+12 hours')->format('Y-m-d H:m:s')
+            'updated_at' => $update,
+            'expirated_at' => $expirate
         ];
 
         if($status === 'insert'){
-            //$randomBytes = random_bytes(64);
-            //$token = base64_encode($randomBytes);
+            $createTokenTable['user_id']  = $user_id;
             $myToken = Random::generate(88, '0–9a-zA-Z');
-            //array_push($createTokenTable, $myToken);
             $createTokenTable['token'] = $myToken;
         }
 

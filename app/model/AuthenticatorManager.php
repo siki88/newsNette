@@ -13,6 +13,7 @@ use Nette,
 
 use App\Model\Facades\UserFacade;
 use App\Model\Facades\RolesFacade;
+use App\Model\Facades\TokenFacade;
 
 class AuthenticatorManager implements IAuthenticator {
 
@@ -21,11 +22,13 @@ class AuthenticatorManager implements IAuthenticator {
     private $tokenManager;
     private $userFacade;
     private $rolesFacade;
+    private $tokenFacade;
 
-    public function __construct(TokenManager $tokenManager, UserFacade $userFacade, RolesFacade $rolesFacade){
+    public function __construct(TokenManager $tokenManager, UserFacade $userFacade, RolesFacade $rolesFacade, TokenFacade $tokenFacade){
         $this->tokenManager = $tokenManager;
         $this->userFacade = $userFacade;
         $this->rolesFacade = $rolesFacade;
+        $this->tokenFacade = $tokenFacade;
     }
 
 
@@ -48,6 +51,7 @@ class AuthenticatorManager implements IAuthenticator {
 
     private function defaultAuthenticate(array $credentials){
         list($email, $password) = $credentials;
+//upgrade to doctrine - OK
         $parametersUser = array('email' => $email);
          $row = $this->userFacade->getUsersOneParam($parametersUser);
             if (!$row) {
@@ -63,6 +67,7 @@ class AuthenticatorManager implements IAuthenticator {
 
     private function customAuthenticate($credentials){
         list($email, $password) = $credentials;
+//upgrade to doctrine - OK
         $parametersUser = array('email' => $email);
         $row = $this->userFacade->getUsersOneParam($parametersUser);
         if (!$row){
@@ -72,14 +77,15 @@ class AuthenticatorManager implements IAuthenticator {
         }else{
             //controll and create token
             $tokenData = $this->tokenManager->setTokenUserId($row->id);
+
             $data = [
                 'email' => $row->email,
-                'token' => $tokenData['token'],
+                'token' => $tokenData->token,
                 'code' => 200,
                 'description' => 'Login.'
             ];
         }
-            $authorize = new Nette\Security\Identity($row->id, $row->role, $data); //->getData()
+            $authorize = new Nette\Security\Identity($row->id, $row->roles_id, $data); //->getData()
         return($authorize);
     }
 

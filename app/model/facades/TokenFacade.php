@@ -40,6 +40,17 @@ class TokenFacade{
         return isset($parameters) ? $this->entityManager->getRepository($this->entityName)->findOneBy($parameters) : NULL;
     }
 
+    public function setToken($parametersData, array $parametersQuery = []){
+        if(count($parametersQuery) >= 1){ //UPDATED
+            $value = $this->getTokenOneParam($parametersQuery);
+            $value->updated_at = $parametersData['updated_at'];
+            $value->expirated_at = $parametersData['expirated_at'];
+        }else{ //INSERT
+            $this->entityManager->persist((object)$parametersData);
+        }
+        $this->entityManager->flush();
+    }
+
 
 
 

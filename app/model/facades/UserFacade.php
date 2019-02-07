@@ -9,7 +9,7 @@
 namespace App\Model\Facades;
 
 use App\Model\Entities\User;
-use App\Model\Entities\Roles;
+//use App\Model\Entities\Roles;
 use Kdyby\Doctrine\EntityManager;
 
 class UserFacade{
