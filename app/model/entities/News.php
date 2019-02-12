@@ -16,12 +16,13 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class News extends \Kdyby\Doctrine\Entities\BaseEntity{
 
+    //Property
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue
      */
-    public $id;
+    protected $id;
 
     /**
      * Sloupec pro short_text.

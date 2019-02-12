@@ -21,7 +21,7 @@ class Roles extends \Kdyby\Doctrine\Entities\BaseEntity{
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue
      */
-    public $id;
+    protected $id;
 
     /**
      * Sloupec pro jméno.

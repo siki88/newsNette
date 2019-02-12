@@ -9,6 +9,7 @@
 namespace App\Model\Entities;
 
 use Doctrine\ORM\Mapping as ORM;
+use App\Model\Entities\Roles;
 
 /**
  * @ORM\Entity
@@ -26,7 +27,7 @@ class User extends \Kdyby\Doctrine\Entities\BaseEntity{
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue
      */
-    public $id;
+    protected $id;
 
     /**
      * Sloupec pro jméno.
@@ -49,6 +50,8 @@ class User extends \Kdyby\Doctrine\Entities\BaseEntity{
     /**
      * Sloupec role
      * @ORM\Column(name="`roles_id`", type="integer")
+     * @ORM\OneToOne(targetEntity="Roles")
+     * @ORM\JoinColumn(name="roles_id", referencedColumnName="id")
      */
     protected $roles_id;
 

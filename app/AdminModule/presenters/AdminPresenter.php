@@ -66,6 +66,15 @@ final class AdminPresenter extends BasePresenter{
 //update doctrine - OK
     public function renderUsers(){
         $this->template->usersValues = $this->userFacade->getUsersAll();
+
+        $users = $this->userFacade->getUsersAll();
+
+        foreach($users as $user){
+            dump($user);
+
+        }
+
+
     }
 
     public function actionUsers(){

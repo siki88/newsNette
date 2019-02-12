@@ -1,5 +1,5 @@
 var working = false;
-$('.username').on('submit', function(e) {
+$('username').on('submit', function(e) {
   e.preventDefault();
   if (working) return;
   working = true;

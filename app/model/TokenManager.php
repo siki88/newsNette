@@ -42,10 +42,10 @@ class TokenManager  {
 
 
     /*vyhledá zda má uživatel token,
-         pokud nemá -> založí nový,
-         pokud má -> updatuje expirační datum datum, a to :
-                    pokud je expirační datum menší než aktuální -> pouze prodlouží expirační datum
-                    pokud je expirační datum větší než aktuální -> vygeneruje nový token a prodlouží expirační datum
+    *     pokud nemá -> založí nový,
+    *     pokud má -> updatuje expirační datum datum, a to :
+    *                pokud je expirační datum menší než aktuální -> pouze prodlouží expirační datum
+    *                pokud je expirační datum větší než aktuální -> vygeneruje nový token a prodlouží expirační datum
     */
     public function setTokenUserId(int $user_id){
         //controll exists old token
@@ -101,14 +101,10 @@ class TokenManager  {
 
 
     private function generateTableToken($user_id, $status){
-
-        $actualDate = DateTime::from(date('Y-m-d H:m:s'));
-        $update = DateTime::createFromFormat('Y-m-d H:m:s', $actualDate);
-        $expirate= DateTime::createFromFormat('Y-m-d H:m:s', $actualDate->modify('+1 hours'));
-
+        
         $createTokenTable = [
-            'updated_at' => $update,
-            'expirated_at' => $expirate
+            'updated_at' => DateTime::from(0),
+            'expirated_at' => DateTime::from(21600)
         ];
 
         if($status === 'insert'){
@@ -119,5 +115,6 @@ class TokenManager  {
 
         return($createTokenTable);
     }
+
 
 }
