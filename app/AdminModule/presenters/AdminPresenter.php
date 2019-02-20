@@ -12,6 +12,10 @@ use Nette\Application\UI\Presenter,
      App\Model\RolesManager;
 use App\Presenters\BasePresenter;
 
+
+use Nette\Utils\DateTime,
+     Nette\Utils\Random;
+
 final class AdminPresenter extends BasePresenter{
 
     private $newsManager,
@@ -57,24 +61,52 @@ final class AdminPresenter extends BasePresenter{
 
 //update doctrine - chybí inch_up + inch_down
     public function renderNews(){
+        $newsAll = $this->newsFacade->getNewsAll();
+
+        foreach($newsAll as $key => $value){
+            $newsAll[$key]->users_id = $this->userFacade->getUserId($value->users_id);
+        }
+
         $this->template->newsValues = $this->newsFacade->getNewsAll();
+
     }
 
     public function actionNews(){
+        /*
+            //MY TEST SAVE ON MEMORY
+            $cacheDriver = new \Doctrine\Common\Cache\ArrayCache();
+
+            $myData = ['hello',
+                    'world',
+                    DateTime::from(0),
+                    Random::generate(88, '0–9a-zA-Z')
+                      ];
+
+            $cacheDriver->save(5,$myData,false);
+
+            //MY TEST LOAD ON MEMORY
+            if($cacheDriver->contains(5)){
+                echo('cache exists');
+                dump($cacheDriver->fetch(5));
+            }else{
+                echo('cache does not exists');
+            }
+
+            //MY TEST DELETE MEMORY
+            //$cacheDriver->delete(5);
+            $cacheDriver->deleteAll();
+        */
     }
 
 //update doctrine - OK
     public function renderUsers(){
-        $this->template->usersValues = $this->userFacade->getUsersAll();
+        $usersAll = $this->userFacade->getUsersAll();
 
-        $users = $this->userFacade->getUsersAll();
-
-        foreach($users as $user){
-            dump($user);
-
+        foreach($usersAll as $key => $value){
+            $usersAll[$key]->roles_id = $this->rolesFacade->getRolesId($value->roles_id);
         }
 
-
+        $this->template->usersValues = $usersAll;
     }
 
     public function actionUsers(){
@@ -83,7 +115,14 @@ final class AdminPresenter extends BasePresenter{
 //update doctrine - OK
     public function renderEvaluations($newsId){
         $parametersEvaluation = array('news_id' => $newsId);
-        $this->template->evaluationsValues = $this->evaluationFacade->getEvaluationParam($parametersEvaluation);
+        $evaluationAll = $this->evaluationFacade->getEvaluationParam($parametersEvaluation);
+
+        foreach($evaluationAll as $key => $value){
+            $evaluationAll[$key]->news_id = $this->newsFacade->getNewsId($value->news_id);
+            $evaluationAll[$key]->users_id = $this->userFacade->getUserId($value->users_id);
+        }
+
+        $this->template->evaluationsValues = $evaluationAll;
         $this->template->titleNews = $this->newsFacade->getNewsId($newsId)->short_text;
     }
 

@@ -28,6 +28,10 @@ class EvaluationFacade{
         return $this->entityManager->getRepository($this->entityName)->findAll();
     }
 
+    public function getEvaluationCount(array $parameters = []){
+        return $this->entityManager->getRepository($this->entityName)->count($parameters);
+    }
+
     public function getEvaluationId(int $id){
         return isset($id) ? $this->entityManager->find($this->entityName, $id) : NULL;
     }

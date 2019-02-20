@@ -41,7 +41,7 @@ class TokenManager  {
     }
 
 
-    /*vyhledá zda má uživatel token,
+    /*getUsersFindPairsvyhledá zda má uživatel token,
     *     pokud nemá -> založí nový,
     *     pokud má -> updatuje expirační datum datum, a to :
     *                pokud je expirační datum menší než aktuální -> pouze prodlouží expirační datum

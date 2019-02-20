@@ -49,6 +49,11 @@ class UserFacade{
         return isset($parameters) ? $this->entityManager->getRepository($this->entityName)->findOneBy($parameters) : NULL;
     }
 
+    public function getUsersAllJoinAll(){
+        $query = $this->entityManager->createQuery("SELECT u, r.name FROM App\Model\Entities\User u JOIN App\Model\Entities\Roles r WHERE u.roles_id = r.id");
+        return isset($query) ? $query->getResult() : NULL;
+    }
+
 
 
 

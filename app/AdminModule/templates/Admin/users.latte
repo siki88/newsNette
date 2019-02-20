@@ -3,8 +3,10 @@
 {/block}
 
 {block content}
-	{include header}
-	{include sectionUsers}
+	{spaceless}
+		{include header}
+		{include sectionUsers}
+	{/spaceless}
 {/block}
 
 
@@ -59,7 +61,7 @@
 				<td>{$usersValue->username}</td>
 				<td>{$usersValue->email}</td>
 				<td>{$usersValue->password}</td>
-				<td>{$usersValue->roles_id}</td>
+				<td>{$usersValue->roles_id->name}</td>
 				<td class="date">{$usersValue->created_at|date:'F j, Y'}</td>
 			</tr>
 		</tbody>

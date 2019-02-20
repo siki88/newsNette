@@ -32,7 +32,7 @@ class RolesFacade{
         return $this->entityManager->getRepository($this->entityName)->count($parameters);
     }
 
-    public function getRolesId(int $id){
+    public function getRolesId( $id){
         return isset($id) ? $this->entityManager->find($this->entityName, $id) : NULL;
     }
 

@@ -169,9 +169,7 @@ final class ApiPresenter extends BasePresenter{
         //    var_dump($key);
         //    var_dump($value);
             Validators::assertField($httpRequest, $key, $value);
-
                 $this->response($httpRequest);
-
         }
         return true;
     }
