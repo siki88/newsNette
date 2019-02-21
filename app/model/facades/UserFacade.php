@@ -52,9 +52,21 @@ class UserFacade{
     public function getUsersAllJoinAll(){
         $query = $this->entityManager->createQuery("SELECT u, r.name FROM App\Model\Entities\User u JOIN App\Model\Entities\Roles r WHERE u.roles_id = r.id");
         return isset($query) ? $query->getResult() : NULL;
+
+
+    /*
+        $query = $this->entityManager->getRepository($this->entityName)
+            ->createQueryBuilder()
+            ->select('u, r.name')
+            ->from('App\Model\Entities\User','u')
+            ->leftJoin('App\Model\Entities\Roles','r')
+            ->where('u.roles_id = r.id')
+            ->getQuery()
+            ->execute();
+        return isset($query) ? $query : NULL;
+    */
+
     }
-
-
 
 
 }

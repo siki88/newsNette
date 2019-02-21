@@ -41,10 +41,12 @@ class TokenFacade{
     }
 
     public function setToken($parametersData, array $parametersQuery = []){
+        var_dump((object)$parametersData);
         if(count($parametersQuery) >= 1){ //UPDATED
             $value = $this->getTokenOneParam($parametersQuery);
             $value->updated_at = $parametersData['updated_at'];
             $value->expirated_at = $parametersData['expirated_at'];
+            $this->entityManager->persist($value);
         }else{ //INSERT
             $this->entityManager->persist((object)$parametersData);
         }

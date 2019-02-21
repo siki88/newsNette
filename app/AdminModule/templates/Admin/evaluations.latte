@@ -40,8 +40,8 @@
 		<thead>
 		<tr>
 			<th>id</th>
-			<th>news id</th>
-			<th>user id</th>
+			<th>news | id |</th>
+			<th>user | id |</th>
 			<th>inch</th>
 			<th>evaluation</th>
 			<th>created at</th>
@@ -51,8 +51,8 @@
 		<tbody>
 		<tr n:foreach="$evaluationsValues as $evaluationsValue">
 			<td>{$evaluationsValue->id}</td>
-			<td>{$evaluationsValue->news_id->short_text}</td>
-			<td>{$evaluationsValue->users_id->username}</td>
+			<td>{$evaluationsValue->news_id->short_text} | {$evaluationsValue->news_id->id} |</td>
+			<td>{$evaluationsValue->users_id->username} | {$evaluationsValue->users_id->id} |</td>
 			<td>{if $evaluationsValue->inch_up}<img src="{$baseUrl}/img/like.png" alt="like" height="25" width="25">
 				{elseif $evaluationsValue->inch_down}<img src="{$baseUrl}/img/unlike.png" alt="unlike" height="27" width="27">
 				{else}<img src="{$baseUrl}/img/noSearch.png" alt="no search" height="27" width="27">

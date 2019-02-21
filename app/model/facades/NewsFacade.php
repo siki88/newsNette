@@ -10,6 +10,22 @@ namespace App\Model\Facades;
 
 use App\Model\Entities\News;
 use Kdyby\Doctrine\EntityManager;
+use Nette\Utils\ArrayHash;
+use Nette\Utils\Arrays;
+
+
+
+
+use Nette\Application\UI\Form;
+use Kdyby\DoctrineForms\EntityForm;
+
+
+use Kdyby;
+use Kdyby\DoctrineForms\EntityFormMapper;
+use Kdyby\DoctrineForms\IComponentMapper;
+use Nette;
+use Nette\Application\UI;
+
 
 class NewsFacade{
 
@@ -38,6 +54,13 @@ class NewsFacade{
 
     public function getNewsParam(array $parameters = []){
         return isset($parameters) ? $this->entityManager->getRepository($this->entityName)->findBy($parameters) : NULL;
+    }
+
+    public function setNews($value){
+        dump($value);
+        die();
+        $this->entityManager->persist($value);
+        $this->entityManager->flush();
     }
 
     /*

@@ -7,27 +7,22 @@ use Nette\Application\UI\Presenter,
      Nette\Application\UI\Form,
      Nette\Security\AuthenticationException,
      App\Model\NewsManager,
-     App\Model\UsersManager,
-     App\Model\EvaluationsManager,
-     App\Model\RolesManager;
+     App\Model\UsersManager;
 use App\Presenters\BasePresenter;
 
+use Kdyby\DoctrineForms\EntityForm;
 
 use Nette\Utils\DateTime,
      Nette\Utils\Random;
 
 final class AdminPresenter extends BasePresenter{
 
-    private $newsManager,
-             $usersManager,
-             $evaluationsManager,
-             $rolesManager;
+    private $newsManager;
+    private $usersManager;
 
-    public function __construct(NewsManager $newsManager, UsersManager $usersManager, EvaluationsManager $evaluationsManager, RolesManager $rolesManager){
+    public function __construct(NewsManager $newsManager, UsersManager $usersManager){
         $this->newsManager = $newsManager;
         $this->usersManager = $usersManager;
-        $this->evaluationsManager = $evaluationsManager;
-        $this->rolesManager = $rolesManager;
     }
 
 
@@ -67,8 +62,7 @@ final class AdminPresenter extends BasePresenter{
             $newsAll[$key]->users_id = $this->userFacade->getUserId($value->users_id);
         }
 
-        $this->template->newsValues = $this->newsFacade->getNewsAll();
-
+        $this->template->newsValues = $newsAll;
     }
 
     public function actionNews(){
@@ -110,6 +104,7 @@ final class AdminPresenter extends BasePresenter{
     }
 
     public function actionUsers(){
+      //  dump($this);
     }
 
 //update doctrine - OK
@@ -136,7 +131,7 @@ final class AdminPresenter extends BasePresenter{
     private function controlUserLogin(){
             //pokud je přihlášený a pokud má roli administrátora
         if($this->getUser()->isLoggedIn() && in_array("admin", $this->user->getIdentity()->getRoles())){
-            $this->user->setExpiration('15 minutes');
+            $this->user->setExpiration('480 minutes');
         }elseif($this->getAction() !== 'login'){
             $this->redirect('Admin:login');
         }
@@ -219,6 +214,10 @@ final class AdminPresenter extends BasePresenter{
                 }
                 break;
             case "news":
+
+                $this->newsFacade->setNews($values);
+                die();
+
                 $this->newsManager->setAddNews($values);
                 $this->flashMessage('Novinka přidána.', 'success');
                 $this->redirect('news');
